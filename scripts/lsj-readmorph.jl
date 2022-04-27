@@ -5,7 +5,7 @@ Pkg.resolve()
 Pkg.instantiate()
 using LexiconMining
 
-basedir = joinpath(pwd(), "cex", "lsj")
+basedir = joinpath(pwd(), "cex")
 v = Vector{MorphData}()
 for i in collect(1:27)
     f = joinpath(basedir, "morphdata_$(i).cex")

@@ -2,3 +2,9 @@ name = "LSJMining"
 uuid = "43354e92-6fc2-4cf2-af8b-a72a4ebba07f"
 authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+LexiconMining = "d7cc8c4b-a12f-4850-86db-026797cdfce2"
+
+[compat]
+LexiconMining = "0.2"
