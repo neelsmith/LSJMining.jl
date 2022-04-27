@@ -35,6 +35,7 @@ function decl2neut(v::Vector{MorphData}, target)
         d.gen == "τό" && 
         endswith(stripped,"ον")
     end
+    @info("Second decl. neut. nouns to format: $(length(neutnouns))")
     neutlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(neutnouns)
         if i % 100 == 0
