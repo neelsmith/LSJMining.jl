@@ -28,8 +28,6 @@ function decl2masc(v::Vector{MorphData}, target)
     end
 end
 
-
-
 function decl2neut(v::Vector{MorphData}, target)
     neutnouns = filter(v) do d 
         stripped = rmaccents(d.label)
