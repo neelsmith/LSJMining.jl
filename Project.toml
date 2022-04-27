@@ -8,5 +8,4 @@ LexiconMining = "d7cc8c4b-a12f-4850-86db-026797cdfce2"
 PolytonicGreek = "72b824a7-2b4a-40fa-944c-ac4f345dc63a"
 
 [compat]
-LexiconMining = "0.2"
-PolytonicGreek = "0.14"
+PolytonicGreek = "0.15"

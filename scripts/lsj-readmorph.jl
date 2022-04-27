@@ -12,3 +12,17 @@ for i in collect(1:27)
     append!(v, readlines(f) .|> morphData)
 end
 
+
+###
+using PolytonicGreek
+vvowels = vcat(split(PolytonicGreek.LG_VOWELS,""), PolytonicGreek.allaccents())
+
+mascs = filter(m -> m.gen == "ὁ" && endswith(m.label,"ν"),  v)
+words = map(d -> d.label, neuts)
+syllabifiedvowels = []
+for word in words
+    cstrings = split(word,"")
+    vstrings = filter(c -> c in vvowels,  cstrings)
+    push!(syllabifiedvowels, vstrings)
+end
+
