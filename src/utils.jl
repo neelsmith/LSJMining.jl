@@ -1,4 +1,14 @@
 
+function adjstemsdir(target)
+    if ! isdir(joinpath(target, "stems-tables"))
+        mkdir(joinpath(target, "stems-tables"))
+    end
+    if !isdir(joinpath(target, "stems-tables", "adjectives"))
+        mkdir(joinpath(target, "stems-tables", "adjectives"))
+    end
+end
+
+
 
 function nounstemsdir(target)
     if ! isdir(joinpath(target, "stems-tables"))
