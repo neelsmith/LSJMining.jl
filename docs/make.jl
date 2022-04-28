@@ -12,7 +12,7 @@ Pkg.add("https://github.com/neelsmith/LexiconMining.jl")
 Pkg.instantiate()
 
 using Documenter, DocStringExtensions
-using LexiconMining
+using LSJMining
 
 
 makedocs(
