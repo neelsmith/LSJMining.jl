@@ -1,7 +1,7 @@
 using PolytonicGreek
 const PG = PolytonicGreek
 
-prefixes = readlines("deiknumi-prefixes.txt") .|> PG.nfkc
+prefixes = readlines("compounding-prefixes.txt") .|> PG.nfkc
 disjunction = join(sort(prefixes, by=length, rev=true), "|")
 re = Regex("^($disjunction)(.+)")
 
