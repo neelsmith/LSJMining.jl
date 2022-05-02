@@ -6,18 +6,16 @@ Pkg.instantiate()
 
 
 
-basedir = joinpath(pwd(), "cex", "lsj")
+basedir = joinpath(pwd(), "cex")
 v = Vector{MorphData}()
 for i in collect(1:27)
     f = joinpath(basedir, "morphdata_$(i).cex")
     append!(v, readlines(f) .|> morphData)
 end
 
-f = joinpath(pwd(), "cex", "lsj", "morphdataalpha.cex")
-target = joinpath(pwd(), "cex", "lsj", "pos-itype-pairs-bycount.cex")
+target = joinpath(pwd(), "cex", "pos-itype-pairs-bycount.cex")
 
-
-freqtab = pos_itype_counts(f)
+freqtab = pos_itype_counts(v)
 open(target, "w") do io
     write(io,join(freqtab,"\n"))
 end
