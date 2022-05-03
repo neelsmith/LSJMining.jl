@@ -62,6 +62,11 @@ function contractverb(m::MorphData)
     end
 end
 
+"""True if label for `m` is a regular verb pattern in -ίζω.
+"""
+function izwverb(m::MorphData)
+    endswith(m.label, PG.nfkc("ίζω"))
+end
 
 """True if label for `m` is a regular verb pattern in -νυμι.
 """
@@ -74,4 +79,18 @@ end
 """
 function irregmiverb(m::MorphData)
     endswith(m.label, "μι") && endswith(m.label,"νυμι") == false && isempty(m.gen)
+end
+
+
+"""True if label for `m` is an iregular -μι verb pattern.
+"""
+function irregomega(m::MorphData)
+    endswith(m.label, "ω") && 
+    isempty(m.gen) && 
+    ! vowelverb(m) &&
+    ! liquidverb(m) &&
+    ! stopverb(m) &&
+    ! contractverb(m)  &&
+    ! izwverb(m)
+
 end

@@ -13,7 +13,7 @@ export decl2
 export adjs1_2
 
 
-export vowelverb, liquidverb, stopverb, contractverb, numiverb, irregmiverb
+export vowelverb, liquidverb, stopverb, contractverb, izwverb, numiverb, irregmiverb, irregomega
 
 end # module
 
