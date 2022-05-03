@@ -1,7 +1,7 @@
 
 # After loading morphodata into `v`:
 flist = [
-    vowelverb, liquidverb, stopverb, contractverb, izwverb, numiverb, irregmiverb, irregomega
+    vowelverb, liquidverb, stopverb, contractverb, izwverb, sigmaverb, numiverb, irregmiverb, irregomega
 ]
 
 countpairs = []
@@ -41,5 +41,5 @@ end
  'ϝ': Unicode U+03DD (category Ll: Letter, lowercase)
  'α': Unicode U+03B1 (category Ll: Letter, lowercase)
  'ο': Unicode U+03BF (category Ll: Letter, lowercase)
- 
+
 =#

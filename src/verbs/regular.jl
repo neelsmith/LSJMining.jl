@@ -5,6 +5,8 @@ const STOPS = vcat(LABIALS, DENTALS, PALATALS)
 
 const LIQUIDS = split("λρμν","")
 
+const SIGMAS = split("σζψξ","")
+
 const CONTRACTING = [PG.nfkc("έω"), PG.nfkc("άω"), PG.nfkc("όω")]
 const NONCONTRACTING = split( "ιυηω" ,"")
 
@@ -15,7 +17,9 @@ function vowelverb(m::MorphData)
     cpindexes = collect(eachindex(s))
     if length(cpindexes)  > 2
         start = cpindexes[end-1]
-        endswith(s,"ω") && Unicode.normalize(string(s[start]), stripmark = true) in  NONCONTRACTING
+        endswith(s,"ω") && 
+        isempty(m.gen) && 
+        Unicode.normalize(string(s[start]), stripmark = true) in  NONCONTRACTING
     else
         false
     end
@@ -29,7 +33,9 @@ function liquidverb(m::MorphData)
     cpindexes = collect(eachindex(s))
     if length(cpindexes)  > 2
         start = cpindexes[end-1]
-        endswith(s,"ω") && string(s[start]) in  LIQUIDS
+        endswith(s,"ω") && 
+        isempty(m.gen) && 
+        string(s[start]) in  LIQUIDS
     else
         false
     end
@@ -43,7 +49,9 @@ function stopverb(m::MorphData)
     cpindexes = collect(eachindex(s))
     if length(cpindexes)  > 2
         start = cpindexes[end-1]
-        endswith(s,"ω") && string(s[start]) in  STOPS
+        endswith(s,"ω") && 
+        isempty(m.gen) &&
+        string(s[start]) in  STOPS
     else
         false
     end
@@ -56,7 +64,9 @@ function contractverb(m::MorphData)
     cpindexes = collect(eachindex(s))
     if length(cpindexes)  > 2
         start = cpindexes[end-1]
-        s[start:end] in  CONTRACTING
+        endswith(m.label, "ω") &&
+        isempty(m.gen) &&
+        s[start:end] in CONTRACTING
     else
         false
     end
@@ -68,17 +78,40 @@ function izwverb(m::MorphData)
     endswith(m.label, PG.nfkc("ίζω"))
 end
 
+
+
+
+"""True if label for `m` is a stop verb pattern.
+"""
+function sigmaverb(m::MorphData)
+    s = m.label
+    cpindexes = collect(eachindex(s))
+    if length(cpindexes)  > 2
+        start = cpindexes[end-1]
+        endswith(s,"ω") && 
+        isempty(m.gen) &&
+        ! izwverb(m) &&
+        string(s[start]) in SIGMAS
+    else
+        false
+    end
+end
+
+
 """True if label for `m` is a regular verb pattern in -νυμι.
 """
 function numiverb(m::MorphData)
-    endswith(m.label, "νυμι")
+    endswith(m.label, "νυμι") &&
+    isempty(m.gen)
 end
 
 
 """True if label for `m` is an iregular -μι verb pattern.
 """
 function irregmiverb(m::MorphData)
-    endswith(m.label, "μι") && endswith(m.label,"νυμι") == false && isempty(m.gen)
+    endswith(m.label, "μι") &&
+     ! endswith(m.label,"νυμι") && 
+     isempty(m.gen)
 end
 
 
@@ -91,6 +124,7 @@ function irregomega(m::MorphData)
     ! liquidverb(m) &&
     ! stopverb(m) &&
     ! contractverb(m)  &&
-    ! izwverb(m)
+    ! izwverb(m) &&
+    ! sigmaverb(m)
 
 end
