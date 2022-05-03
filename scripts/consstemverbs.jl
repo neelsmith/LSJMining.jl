@@ -1,6 +1,12 @@
 using PolytonicGreek
+using Unicode
+
 const PG = PolytonicGreek
     ortho = literaryGreek()
+
+
+
+
 
 omega2 = filter(v) do m
     cpindexes = collect(eachindex(m.label))
@@ -28,4 +34,8 @@ endings = map(omegalabels) do s
         s
     end
 end
+
+
+
+
 
