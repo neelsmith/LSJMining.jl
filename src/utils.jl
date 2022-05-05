@@ -53,9 +53,14 @@ function loadmorphdata(cexdir)
     for i in collect(1:27)
         f = joinpath(cexdir, "morphdata_$(i).cex")
         mdata = readlines(f)[2:end] .|> morphData
-        for m in mdata
+        for (i,m) in enumerate(mdata)
+            if i % 100 == 0
+                @info("$(i)...")
+            end
             if validstring(m.label, ortho)
                 push!(v, m)
+            else
+                @warn("Invalid string:", m.label)
             end
         end
     end
