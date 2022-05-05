@@ -11,8 +11,8 @@ using LexiconMining
 
 
 function formatbook(n)
-    f = joinpath(pwd(), "source-data", "lsj", "lsj_$(n).cex")
-    target = joinpath(pwd(),"cex", "lsj", "lsj_main_$(n).cex")
+    f = joinpath(pwd(), "source-data", "lsj_$(n).cex")
+    target = joinpath(pwd(),"cex", "mainentries", "lsj_main_$(n).cex")
 
     mainentries = formatentries(f)
     open(target, "w") do io
