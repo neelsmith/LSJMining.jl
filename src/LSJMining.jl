@@ -1,9 +1,13 @@
 module LSJMining
 using LexiconMining
-using PolytonicGreek
-const PG = PolytonicGreek
+using PolytonicGreek, Orthography
 using Unicode
 
+# Too hard to type:
+const PG = PolytonicGreek
+
+
+using Documenter, DocStringExtensions
 include("utils.jl")
 include("phonology.jl")
 
@@ -16,6 +20,8 @@ include("verbs/regular.jl")
 include("verbs/prefixes.jl")
 include("verbs/morphemes.jl")
 include("verbs/verbs.jl")
+
+export loadmorphdata
 
 export decl2
 export adjs1_2

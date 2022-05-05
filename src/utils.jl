@@ -1,4 +1,8 @@
 
+"""Find and create if necessary stems directory for
+adjectives for the Kanones dataset in `target`.
+$(SIGNATURES)
+"""
 function adjstemsdir(target)
     if ! isdir(joinpath(target, "stems-tables"))
         mkdir(joinpath(target, "stems-tables"))
@@ -9,7 +13,10 @@ function adjstemsdir(target)
 end
 
 
-
+"""Find and create if necessary stems directory for
+nouns for the Kanones dataset in `target`.
+$(SIGNATURES)
+"""
 function nounstemsdir(target)
     if ! isdir(joinpath(target, "stems-tables"))
         mkdir(joinpath(target, "stems-tables"))
@@ -20,6 +27,9 @@ function nounstemsdir(target)
 end
 
 
+"""Find LSJMining's string key word for accent type.
+$(SIGNATURES)
+"""
 function accenttype(s::AbstractString)
     if lg_accentedsyll(s) == :UNACCENTED
         nothing
@@ -30,4 +40,24 @@ function accenttype(s::AbstractString)
     elseif lg_accentedsyll(s) == :ANTEPENULT
         "recessive"
     end
+end
+
+"""Load morphology data from files in `cex` directory
+of repository, and filter for entries with valid orthography
+only.
+$(SIGNATURES)
+"""
+function loadmorphdata(cexdir)
+    ortho = literaryGreek()
+    v = Vector{MorphData}()
+    for i in collect(1:27)
+        f = joinpath(cexdir, "morphdata_$(i).cex")
+        mdata = readlines(f)[2:end] .|> morphData
+        for m in mdata
+            if validstring(m.label, ortho)
+                push!(v, m)
+            end
+        end
+    end
+    v
 end

@@ -20,7 +20,8 @@ makedocs(
     pages = [
         "User's guide" => Any[
             "Overview" => "index.md",
-        ]
+        ],
+        "API documentation" => "apis.md"
     ],
     )
 
