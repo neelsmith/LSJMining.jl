@@ -1,5 +1,8 @@
 
-
+"""Extract 1st-2nd declension adjectives from `v`
+and write a stems table to the Kanones dataset in `target`.
+$(SIGNATURES)
+"""
 function adjs1_2(v::Vector{MorphData}, target)
     adjstemsdir(target)
 

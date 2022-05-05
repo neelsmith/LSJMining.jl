@@ -1,4 +1,8 @@
 
+"""Extract second-declension masculine noun entries from `v`
+and write a table to a Kanones dataset.
+
+"""
 function decl2masc(v::Vector{MorphData}, target)
     mnouns = filter(v) do d 
         stripped = rmaccents(d.label)
