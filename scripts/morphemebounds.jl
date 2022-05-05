@@ -3,24 +3,21 @@ const PG = PolytonicGreek
 
 
 
-
-
 # Read all morphdata into `v`
-# more than 20,500 omega entries!
+# more than 20K omega entries!
 omegas = filter(d -> endswith(d.label,"ω"),  v)
 stripped = map(m -> lowercase(m.label) |> stripbreathing,  omegas)
 ostrings = map(d -> d.label, omegas)
 
 #splits = map(s -> splitem(s, re), ostrings)
-splits = map(s -> splitmorphemes(s, stripped), ostrings) 
+splits = map(s -> splitmorphemes(s, stripped, withfailure = true), ostrings) 
 
 
-
-
-
-
-
-
+checkthese = filter(pr -> !isempty(pr[2]) && ! contains(pr[1],"#"), splits)
+open("failchecks.txt", "w") do io
+    write(io, join(checkthese,"\n"))
+end
+length(checkthese)
 
 
 

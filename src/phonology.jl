@@ -21,12 +21,10 @@ breathingstripdict = Dict(
        'ὄ' => 'ό',
        'ὅ' => 'ό',
 
-
        'ὐ' => 'υ',
        'ὑ'  => 'υ',
        'ὔ' => 'ύ',
        'ὕ' => 'ύ',
-
 
        'ἠ'  => 'η',
        'ἡ' => 'η',
@@ -36,21 +34,61 @@ breathingstripdict = Dict(
        'ὠ'  => 'ω',
        'ὡ' => 'ω',
        'ὤ' => 'ώ',
-       'ὥ' => 'ώ'
+       'ὥ' => 'ώ',
+
+       "υἰ" => "υι",
+       "αἰ" => "αι",
+       "εἰ" => "ει",
+       "οἰ" => "οι",
+       
+       "αὐ" => "αυ",
+       "εὐ" => "ευ",
+       "οὐ" => "ου",
+       "ηὐ" => "ηυ",
+       "ωὐ" => "ωυ",
+       "υἰ" => "υι",
+       "αἱ" => "αι",
+       "εἱ" => "ει",
+       "οἱ" => "οι",
+       
+       "αὑ" => "αυ",
+       "εὑ" => "ευ",
+       "οὑ" => "ου",
+       "ηὑ" => "ηυ",
+       "ωὑ" => "ωυ",
+       "υἱ"   => "υι",
+
+        # with acute
+        "αἴ" => "αί",
+        "εἴ" => "εί",
+        "οἴ" => "οί",
+        "αὔ" => "αύ",
+        "εὔ" => "εύ",
+        "οὔ" => "ού",
+        "ηὔ" => "ηύ",
+        "ωὔ" => "ωύ",
+        "υἴ" => "υί",
+        "αἵ" => "αί",
+        "εἵ" => "εί",
+        "οἵ" => "οί",
+        "αὕ" => "αύ",
+        "εὕ" => "εύ",
+        "οὕ" => "ού",
+        "ηὕ" => "ηύ",
+        "ωὕ" => "ωύ",
+        "υἵ" => "υί"
     )
 
 
-function stripbreathing(s)
-    if s[1] in keys(breathingstripdict)
-        chs = []
-        push!(chs, breathingstripdict[s[1]])
-        for i in eachindex(s)
-            if i > 1
-                push!(chs,s[i])
-            end
-        end    
-        join(chs)
-    else
-        s
+function stripbreathing(s)   
+    for k in keys(breathingstripdict)
+        #if s[1] in keys(breathingstripdict)
+        if startswith(s, k)
+            opening = breathingstripdict[k]
+            re = Regex("^($k)")
+            closing = replace(s, re => "")
+            return(opening * closing)
+        end
     end
+    s
 end

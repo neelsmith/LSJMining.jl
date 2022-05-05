@@ -9,43 +9,53 @@ end
 """Split `s` into two parts using `rege`.
 """
 function splitem(s,rege)
-    replace(s, rege => s"\1-\2")
+    replace(s, rege => s"\1#\2")
 end
 
 """True if stem part of morpheme boundary exists in simplex list.
 """
 function stemexists(s, striplist)
-    cols = split(s,"-")
+    @debug("Check", s)
+    cols = split(s, "#")
     breathless = stripbreathing(cols[end])
+    @debug("Breathless", breathless)
     breathless in striplist
 end
 
 
-function splitmorphemes(s, striplist)
+function splitmorphemes(s, striplist; withfailure = false)
+    success = ""
+    failure = ""
+
     disjunction = join(sort(prefixes(), by=length, rev=true), "|")
     re = Regex("^($disjunction)(.+)")
     divided = splitem(s, re)
-    if contains(divided,"-")
-        @info("Split into ", divided)
+    if contains(divided,"#")
+        @debug("Split into ", divided)
         if stemexists(divided, striplist)
-            divided
+            success = divided
         else
-            @info("Didn't find simplex.")
-            pieces = split(divided,"-")
+            @info("Didn't find simplex for", divided)
+            failure = divided
+            pieces = split(divided,"#")
 
             shorter = filter(s -> length(s) < length(pieces[1]), prefixes())
             shorterdisjunction = join(sort(shorter, by = length, rev = true), "|")
             shortre =  Regex("^($shorterdisjunction)(.+)")
             subdivided = splitem(s, shortre)
-            @info("Use", shortre)
-            @info("Subdivided", subdivided)
+            @debug("Use", shortre)
+            
             if stemexists(subdivided, striplist)
-                subdivided
+                @debug("Subdivided", subdivided)
+                success = replace(subdivided, r"^#" => "" )
             else
-                s
+                @info("Subdivided failed", subdivided)
+                failure = subdivided
+                success = s
             end
         end
     else
-        s
+        success = s
     end
+    withfailure ? (success,failure) : success
 end
