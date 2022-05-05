@@ -1,7 +1,7 @@
 name = "LSJMining"
 uuid = "43354e92-6fc2-4cf2-af8b-a72a4ebba07f"
 authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
-version = "0.3.0"
+version = "0.4.0"
 
 [deps]
 DocStringExtensions = "ffbed154-4ef7-542d-bbb7-c09d3a79fcae"
