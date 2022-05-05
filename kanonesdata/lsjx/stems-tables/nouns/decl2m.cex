@@ -998,6 +998,7 @@ nounstems.n24224|lsjx.n24224|Δευνυσ|masculine|os_ou|recessive
 nounstems.n24256|lsjx.n24256|δευτερολογ|masculine|os_ou|stemaccented
 nounstems.n24299|lsjx.n24299|Δ.Η.γμ|masculine|os_ou|inflectionaccented
 nounstems.n24352|lsjx.n24352|Δ.Η.μαγωγ|masculine|os_ou|inflectionaccented
+nounstems.n24358|lsjx.n24358|δῃμαρχ|masculine|os_ou|nothing
 nounstems.n24394|lsjx.n24394|Δ.Η.μιουργ|masculine|os_ou|inflectionaccented
 nounstems.n24412|lsjx.n24412|Δ.Η.μοκλιναρχ|masculine|os_ou|recessive
 nounstems.n24431|lsjx.n24431|Δ.Η.μοπιθηκ|masculine|os_ou|recessive
@@ -2090,6 +2091,7 @@ nounstems.n53432|lsjx.n53432|καρποδεσμ|masculine|os_ou|recessive
 nounstems.n53443|lsjx.n53443|καρπ|masculine|os_ou|inflectionaccented
 nounstems.n53479|lsjx.n53479|καρταζων|masculine|os_ou|recessive
 nounstems.n53482|lsjx.n53482|καρταλλ|masculine|os_ou|recessive
+nounstems.n53523|lsjx.n53523|καρυϊσκ|masculine|os_ou|stemaccented
 nounstems.n53533|lsjx.n53533|καρυκοποι|masculine|os_ou|inflectionaccented
 nounstems.n53547|lsjx.n53547|καρυοωτ|masculine|os_ou|nothing
 nounstems.n53555|lsjx.n53555|καρφισμ|masculine|os_ou|inflectionaccented
@@ -2495,6 +2497,7 @@ nounstems.n59757|lsjx.n59757|κραυγασ|masculine|os_ou|recessive
 nounstems.n59780|lsjx.n59780|κρεανομ|masculine|os_ou|stemaccented
 nounstems.n59782|lsjx.n59782|κρεγμ|masculine|os_ou|inflectionaccented
 nounstems.n59788|lsjx.n59788|κρει|masculine|os_ou|inflectionaccented
+nounstems.n59790|lsjx.n59790|κρεϊσκ|masculine|os_ou|stemaccented
 nounstems.n59808|lsjx.n59808|κρεμασμ|masculine|os_ou|inflectionaccented
 nounstems.n59833|lsjx.n59833|κρεοθηκαρι|masculine|os_ou|stemaccented
 nounstems.n59837|lsjx.n59837|κρεοκοπ|masculine|os_ou|stemaccented
@@ -3104,6 +3107,7 @@ nounstems.n69560|lsjx.n69560|μωκ|masculine|os_ou|stemaccented
 nounstems.n69561|lsjx.n69561|μωκ|masculine|os_ou|inflectionaccented
 nounstems.n69565|lsjx.n69565|μωλ|masculine|os_ou|stemaccented
 nounstems.n69593|lsjx.n69593|μωμ|masculine|os_ou|stemaccented
+nounstems.n69653|lsjx.n69653|Ναϊαρχ|masculine|os_ou|stemaccented
 nounstems.n69665|lsjx.n69665|Ναϊ|masculine|os_ou|inflectionaccented
 nounstems.n69672|lsjx.n69672|ναϊσκ|masculine|os_ou|stemaccented
 nounstems.n69702|lsjx.n69702|ναν|masculine|os_ou|stemaccented
@@ -3455,6 +3459,7 @@ nounstems.n75707|lsjx.n75707|ὀτοστυλλ|masculine|os_ou|recessive
 nounstems.n75722|lsjx.n75722|ὀτταβ|masculine|os_ou|recessive
 nounstems.n75787|lsjx.n75787|οὐδ|masculine|os_ou|inflectionaccented
 nounstems.n75794|lsjx.n75794|οὐετεραν|masculine|os_ou|inflectionaccented
+nounstems.n75804|lsjx.n75804|οὐϊτουλ|masculine|os_ou|recessive
 nounstems.n75815|lsjx.n75815|οὐλαμοεργ|masculine|os_ou|inflectionaccented
 nounstems.n75816|lsjx.n75816|οὐλαμ|masculine|os_ou|inflectionaccented
 nounstems.n75818|lsjx.n75818|οὐλαπισμ|masculine|os_ou|inflectionaccented
@@ -3738,6 +3743,7 @@ nounstems.n82880|lsjx.n82880|πηγετ|masculine|os_ou|inflectionaccented
 nounstems.n82897|lsjx.n82897|πηδαλιουχ|masculine|os_ou|stemaccented
 nounstems.n82901|lsjx.n82901|πηδηθμ|masculine|os_ou|inflectionaccented
 nounstems.n82908|lsjx.n82908|πηδ|masculine|os_ou|inflectionaccented
+nounstems.n82911|lsjx.n82911|πηϊσκ|masculine|os_ou|stemaccented
 nounstems.n82921|lsjx.n82921|πηλακισμ|masculine|os_ou|inflectionaccented
 nounstems.n82947|lsjx.n82947|πηλοπλαθ|masculine|os_ou|stemaccented
 nounstems.n82953|lsjx.n82953|πηλοποι|masculine|os_ou|inflectionaccented
@@ -4098,6 +4104,8 @@ nounstems.n92567|lsjx.n92567|ῥογχασμ|masculine|os_ou|inflectionaccented
 nounstems.n92592|lsjx.n92592|ῥοδισμ|masculine|os_ou|inflectionaccented
 nounstems.n92642|lsjx.n92642|ῥοθ|masculine|os_ou|stemaccented
 nounstems.n92650|lsjx.n92650|ῥοιβδ|masculine|os_ou|stemaccented
+nounstems.n92673|lsjx.n92673|ῥοϊσκ|masculine|os_ou|stemaccented
+nounstems.n92674|lsjx.n92674|ῥοϊσκ|masculine|os_ou|stemaccented
 nounstems.n92675|lsjx.n92675|ῥοϊσμ|masculine|os_ou|inflectionaccented
 nounstems.n92685|lsjx.n92685|ῥομβ|masculine|os_ou|stemaccented
 nounstems.n92692|lsjx.n92692|ῥομ|masculine|os_ou|stemaccented
@@ -5077,6 +5085,7 @@ nounstems.n110674|lsjx.n110674|φθειριασμ|masculine|os_ou|inflectionacce
 nounstems.n110676|lsjx.n110676|φθειρισμ|masculine|os_ou|inflectionaccented
 nounstems.n110707|lsjx.n110707|φθινοπωρισμ|masculine|os_ou|inflectionaccented
 nounstems.n110734|lsjx.n110734|φθογγ|masculine|os_ou|stemaccented
+nounstems.n110737|lsjx.n110737|φθοϊσκ|masculine|os_ou|stemaccented
 nounstems.n110745|lsjx.n110745|φθον|masculine|os_ou|stemaccented
 nounstems.n110757|lsjx.n110757|φθορ|masculine|os_ou|stemaccented
 nounstems.n110768|lsjx.n110768|φιαλοβωμ|masculine|os_ou|inflectionaccented
@@ -5283,6 +5292,7 @@ nounstems.n114299|lsjx.n114299|χοιρογρυλλι|masculine|os_ou|stemaccent
 nounstems.n114306|lsjx.n114306|χοιρομαγειρ|masculine|os_ou|recessive
 nounstems.n114307|lsjx.n114307|χοιροπιθηκ|masculine|os_ou|recessive
 nounstems.n114312|lsjx.n114312|χοιροσπελεθ|masculine|os_ou|recessive
+nounstems.n114324|lsjx.n114324|χοϊσκ|masculine|os_ou|stemaccented
 nounstems.n114362|lsjx.n114362|χολ|masculine|os_ou|stemaccented
 nounstems.n114381|lsjx.n114381|χονδρ|masculine|os_ou|stemaccented
 nounstems.n114383|lsjx.n114383|χονδροσυνδεσμ|masculine|os_ou|recessive
