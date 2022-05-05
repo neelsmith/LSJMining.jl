@@ -42,6 +42,23 @@ function accenttype(s::AbstractString)
     end
 end
 
+
+"""Remove erroneous diacritics 
+for orthographic validation.
+$(SIGNATURES)
+"""
+function tidier(s) 
+    cleaner = replace(s, r"[ᾰᾱ]" => "α")
+    cleaner = replace(cleaner, r"[ῐῑ]" => "ι")
+    cleaner = replace(cleaner, r"[ῠῡ]" => "υ")
+    cleaner  = replace(cleaner, "\u3af\u308" => "ΐ")
+    cleaner  = replace(cleaner, "\u3cd\u308" => "ΰ")
+    cleaner  = replace(cleaner, r"[\u301\u314]" => "")
+    cleaner  = replace(cleaner, "Δ\u2eΗ\u2e\u301" => PG.nfkc("δῃ"))
+
+    cleaner
+end
+
 """Load morphology data from files in `cex` directory
 of repository, and filter for entries with valid orthography
 only.
@@ -59,6 +76,18 @@ function loadmorphdata(cexdir)
             end
             if validstring(m.label, ortho)
                 push!(v, m)
+            elseif validstring(tidier(m.label), ortho)
+                
+                morph = MorphData(
+                    m.id,
+                    tidier(m.label),
+                    m.lemma,
+                    m.pos,
+                    m.itype,
+                    m.gen,
+                    m.mood
+                )
+                push!(v, morph)
             else
                 @warn("Invalid string:", m.label)
             end
@@ -78,12 +107,16 @@ function invalidortho(cexdir)
     for i in collect(1:27)
         f = joinpath(cexdir, "morphdata_$(i).cex")
         mdata = readlines(f)[2:end] .|> morphData
+        @info("Analyzing $(length(mdata)) records from $(f)")
         for (i,m) in enumerate(mdata)
             if i % 100 == 0
-                @info("$(i)...")
+                #@info("$(i)...")
             end
+            
             if ! validstring(m.label, ortho)
-                push!(badlist, m)
+                if ! validstring(tidier(m.label), ortho)
+                    push!(badlist, m)
+                end
             end
         end
     end
