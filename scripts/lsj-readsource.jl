@@ -11,4 +11,3 @@ for i in collect(1:27)
     f = joinpath(basedir, "lsj_$(i).cex")
     append!(xml, readlines(f))
 end
-
