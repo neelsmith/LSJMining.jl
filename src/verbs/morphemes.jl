@@ -35,7 +35,7 @@ function splitmorphemes(s, striplist; withfailure = false)
         if stemexists(divided, striplist)
             success = divided
         else
-            @info("Didn't find simplex for", divided)
+            @warn("Didn't find simplex for", divided)
             failure = divided
             pieces = split(divided,"#")
 
@@ -49,7 +49,7 @@ function splitmorphemes(s, striplist; withfailure = false)
                 @debug("Subdivided", subdivided)
                 success = replace(subdivided, r"^#" => "" )
             else
-                @info("Subdivided failed", subdivided)
+                @warn("Subdivided failed", subdivided)
                 failure = subdivided
                 success = s
             end

@@ -115,7 +115,7 @@ function irregmiverb(m::MorphData)
 end
 
 
-"""True if label for `m` is an iregular -μι verb pattern.
+"""True if label for `m` is an iregular -ω verb pattern.
 """
 function irregomega(m::MorphData)
     endswith(m.label, "ω") && 
