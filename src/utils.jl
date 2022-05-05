@@ -66,3 +66,23 @@ function loadmorphdata(cexdir)
     end
     v
 end
+
+
+"""Find entries with invalid orthography.
+$(SIGNATURES)
+"""
+function invalidortho(cexdir)
+    badlist = []
+    ortho = literaryGreek()
+    v = Vector{MorphData}()
+    for i in collect(1:27)
+        f = joinpath(cexdir, "morphdata_$(i).cex")
+        mdata = readlines(f)[2:end] .|> morphData
+        for (i,m) in enumerate(mdata)
+            if ! validstring(m.label, ortho)
+                push!(badlist, m)
+            end
+        end
+    end
+    badlist
+end
