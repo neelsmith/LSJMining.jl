@@ -42,6 +42,7 @@ PG.nfkc("ἐξανα") => PG.nfkc("ἐξ#ανα"),
 
 PG.nfkc("ἐγ") => PG.nfkc("ἐγ"),
 PG.nfkc("ἐγκατα") => PG.nfkc("ἐγ#κατα"),
+PG.nfkc("ἐμ") => PG.nfkc("ἐμ"),
 PG.nfkc("ἐν") => PG.nfkc("ἐν"),
 PG.nfkc("ἐναπο") => PG.nfkc("ἐν#απο"),
 PG.nfkc("ἐμπερι") => PG.nfkc("ἐμ#περι"),

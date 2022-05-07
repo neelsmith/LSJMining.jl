@@ -6,17 +6,26 @@ regularverbfilters = [
 ]
 =#
 regularverbtypes = [
-    "stopverb"
+    "stopverb",
+    "vowelverb" , 
+    "liquidverb", 
+    "econtract" ,
+    "acontract",
+    "ocontract" ,
+    "izwverb" , 
+    "sigmaverb" , 
+    "numiverb"
 ]
 
 
 verbfilters = Dict(
     "stopverb" => stopverb,
+
     "vowelverb" => vowelverb, 
     "liquidverb" => liquidverb, 
-    #"econtract" => econtract,
-    #"acontract" => acontract,
-    #ocontract" => ocontract,
+    "econtract" => econtractverb,
+    "acontract" => acontractverb,
+    "ocontract" => ocontractverb,
     "izwverb" => izwverb, 
     "sigmaverb" => sigmaverb, 
     "numiverb" => numiverb
@@ -24,7 +33,16 @@ verbfilters = Dict(
 )
 
 infltypemap = Dict(
-    "stopverb" => "w_regular"
+    "stopverb" => "w_regular",
+   
+    "vowelverb" => "w_regular", 
+    "liquidverb" => "w_pp1", 
+    "econtract" => "ew_contract",
+    "acontract" => "aw_contract",
+    "ocontract" => "aw_contract",
+    "izwverb" => "izw", 
+    "sigmaverb" => "w_pp1", 
+    "numiverb" => "numi"
 )
 function trimlemma(s::AbstractString, verbtype::AbstractString)
     if verbtype == "stopverb"
@@ -47,10 +65,15 @@ function lookup(s::AbstractString, v::Vector{MorphData})
 end
 
 function verbs(v::Vector{MorphData}, target)
+
+
     for vtype in regularverbtypes
         f = verbfilters[vtype]
         mdata = filter(d -> f(d), v)
         @info("""Regular verb type "$(f)": $(length(mdata)) verbs to analyze""")
+
+
+
         stripped = map(m -> lowercase(m.label) |> stripbreathing,  mdata)
         lemmastrings = map(d -> d.label, mdata)
         splits = map(s -> splitmorphemes(s, stripped, withfailure = true), lemmastrings) 

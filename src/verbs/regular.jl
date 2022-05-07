@@ -79,6 +79,24 @@ function izwverb(m::MorphData)
 end
 
 
+"""True if label for `m` is a regular verb pattern in -έω.
+"""
+function econtractverb(m::MorphData)
+    endswith(m.label, PG.nfkc("έω"))
+end
+
+
+"""True if label for `m` is a regular verb pattern in -άω.
+"""
+function acontractverb(m::MorphData)
+    endswith(m.label, PG.nfkc("άω"))
+end
+
+"""True if label for `m` is a regular verb pattern in -έω.
+"""
+function ocontractverb(m::MorphData)
+    endswith(m.label, PG.nfkc("όω"))
+end
 
 
 """True if label for `m` is a stop verb pattern.

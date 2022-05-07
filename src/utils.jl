@@ -1,4 +1,20 @@
 
+function registry(kroot = joinpath("..", "Kanones.jl"))
+    f = joinpath(kroot, "datasets", "lsj-vocab", "lexemes", "lsj.cex")
+    data = readlines(f)[2:end]
+    idlist = []
+    for ln in filter(l -> !isempty(l), data)
+        cols = split(ln,"|")
+        pieces = split(cols[1],".")
+        push!(idlist, pieces[2] )
+    end
+    idlist
+end
+
+function unregistered(v::Vector{MorphData}, lsj)
+  filter(d -> (d.id in lsj) == false, v)
+end
+
 """Find and create if necessary stems directory for
 adjectives for the Kanones dataset in `target`.
 $(SIGNATURES)
