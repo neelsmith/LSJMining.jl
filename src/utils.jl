@@ -33,13 +33,19 @@ function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
             end
         end
     end
-    lsj = registry(kroot)
-    unregistered(v, lsj)
+    lsjx = registry(kroot)
+    @info("Filtering for valid ids.")
+    @info("Please be patient.")
+    registered(v, lsjx)
 end
 
 
+"""Read in list of all values in Kanones' `lsjx` collection
+of lexemes.
+$(SIGNATURES)
+"""
 function registry(kroot = joinpath("..", "Kanones.jl"))
-    f = joinpath(kroot, "datasets", "lsj-vocab", "lexemes", "lsj.cex")
+    f = joinpath(kroot, "datasets", "lsj-vocab", "lexemes", "lsjx.cex")
     data = readlines(f)[2:end]
     idlist = []
     for ln in filter(l -> !isempty(l), data)
@@ -50,8 +56,20 @@ function registry(kroot = joinpath("..", "Kanones.jl"))
     idlist
 end
 
-function unregistered(v::Vector{MorphData}, lsj)
-  filter(d -> (d.id in lsj) == false, v)
+
+"""Filter `v` to include only entries appearing in 
+list of ID values `lsjx`.
+$(SIGNATURES)
+"""
+function registered(v::Vector{MorphData}, lsjx)
+    count = 0
+    filter(v) do d
+        count = count + 1
+        if count % 1000 == 0
+            @info("$(count) $(v[count]) ...")
+        end
+        d.id in lsjx
+    end
 end
 
 """Find and create if necessary stems directory for
