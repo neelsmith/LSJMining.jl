@@ -1,4 +1,43 @@
 
+"""Load morphology data from files in `cex` directory
+of repository, and filter for entries with valid orthography
+only.
+$(SIGNATURES)
+"""
+function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
+    ortho = literaryGreek()
+    v = Vector{MorphData}()
+    for i in collect(1:27)
+        f = joinpath(cexdir, "morphdata_$(i).cex")
+        mdata = readlines(f)[2:end] .|> morphData
+        for (i,m) in enumerate(mdata)
+            if i % 100 == 0
+                @info("$(i)...")
+            end
+            if validstring(m.label, ortho)
+                push!(v, m)
+            elseif validstring(tidier(m.label), ortho)
+                
+                morph = MorphData(
+                    m.id,
+                    tidier(m.label),
+                    m.lemma,
+                    m.pos,
+                    m.itype,
+                    m.gen,
+                    m.mood
+                )
+                push!(v, morph)
+            else
+                @warn("Invalid string:", m.label)
+            end
+        end
+    end
+    lsj = registry(kroot)
+    unregistered(v, lsj)
+end
+
+
 function registry(kroot = joinpath("..", "Kanones.jl"))
     f = joinpath(kroot, "datasets", "lsj-vocab", "lexemes", "lsj.cex")
     data = readlines(f)[2:end]
@@ -73,43 +112,6 @@ function tidier(s)
     cleaner  = replace(cleaner, "Δ\u2eΗ\u2e\u301" => PG.nfkc("δῃ"))
 
     cleaner
-end
-
-"""Load morphology data from files in `cex` directory
-of repository, and filter for entries with valid orthography
-only.
-$(SIGNATURES)
-"""
-function loadmorphdata(cexdir)
-    ortho = literaryGreek()
-    v = Vector{MorphData}()
-    for i in collect(1:27)
-        f = joinpath(cexdir, "morphdata_$(i).cex")
-        mdata = readlines(f)[2:end] .|> morphData
-        for (i,m) in enumerate(mdata)
-            if i % 100 == 0
-                @info("$(i)...")
-            end
-            if validstring(m.label, ortho)
-                push!(v, m)
-            elseif validstring(tidier(m.label), ortho)
-                
-                morph = MorphData(
-                    m.id,
-                    tidier(m.label),
-                    m.lemma,
-                    m.pos,
-                    m.itype,
-                    m.gen,
-                    m.mood
-                )
-                push!(v, morph)
-            else
-                @warn("Invalid string:", m.label)
-            end
-        end
-    end
-    v
 end
 
 
