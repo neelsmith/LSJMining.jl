@@ -97,14 +97,12 @@ verbstems.n23226|lsjx.n23226|δαιμονι|aw_contract
 verbstems.n23385|lsjx.n23385|δαμ|aw_contract
 verbstems.n23394|lsjx.n23394|δαμν|aw_contract
 verbstems.n23443|lsjx.n23443|δαπαν|aw_contract
-verbstems.n23595|lsjx.n23595|δ|aw_contract
 verbstems.n23647|lsjx.n23647|δειελι|aw_contract
 verbstems.n23652|lsjx.n23652|δεικαν|aw_contract
 verbstems.n23682|lsjx.n23682|δειλι|aw_contract
 verbstems.n23928|lsjx.n23928|δεκ|aw_contract
 verbstems.n27867|lsjx.n27867|δοκιμ|aw_contract
 verbstems.n27971|lsjx.n27971|δομ|aw_contract
-verbstems.n28420|lsjx.n28420|δρομ|aw_contract
 verbstems.n28550|lsjx.n28550|δυ|aw_contract
 verbstems.n28929|lsjx.n28929|δυσεντερι|aw_contract
 verbstems.n29006|lsjx.n29006|δυσερωτι|aw_contract
@@ -154,7 +152,6 @@ verbstems.n47627|lsjx.n47627|ἡσυχ|aw_contract
 verbstems.n47813|lsjx.n47813|θαλπι|aw_contract
 verbstems.n47864|lsjx.n47864|θανατ|aw_contract
 verbstems.n47872|lsjx.n47872|θανατι|aw_contract
-verbstems.n47948|lsjx.n47948|θ|aw_contract
 verbstems.n47998|lsjx.n47998|θε|aw_contract
 verbstems.n48470|lsjx.n48470|θερμοπλ|aw_contract
 verbstems.n48722|lsjx.n48722|θηρ|aw_contract
@@ -288,7 +285,6 @@ verbstems.n65146|lsjx.n65146|μαστιγι|aw_contract
 verbstems.n65165|lsjx.n65165|μαστιχ|aw_contract
 verbstems.n65234|lsjx.n65234|ματ|aw_contract
 verbstems.n65293|lsjx.n65293|μαχ|aw_contract
-verbstems.n65324|lsjx.n65324|μ|aw_contract
 verbstems.n65691|lsjx.n65691|μειδ|aw_contract
 verbstems.n65697|lsjx.n65697|μειδι|aw_contract
 verbstems.n65789|lsjx.n65789|μελαγχολ|aw_contract
@@ -374,6 +370,7 @@ verbstems.n80357|lsjx.n80357|πειρ|aw_contract
 verbstems.n80408|lsjx.n80408|πελαργ|aw_contract
 verbstems.n80427|lsjx.n80427|πελ|aw_contract
 verbstems.n80442|lsjx.n80442|πελεκ|aw_contract
+verbstems.n80993|lsjx.n80993|περ|aw_contract
 verbstems.n81019|lsjx.n81019|περδικο|aw_contract
 verbstems.n82637|lsjx.n82637|περν|aw_contract
 verbstems.n82642|lsjx.n82642|περον|aw_contract
@@ -463,7 +460,6 @@ verbstems.n102992|lsjx.n102992|τελευτ|aw_contract
 verbstems.n103798|lsjx.n103798|τηλεθ|aw_contract
 verbstems.n103944|lsjx.n103944|τιλ|aw_contract
 verbstems.n103972|lsjx.n103972|τιμ|aw_contract
-verbstems.n104119|lsjx.n104119|τλ|aw_contract
 verbstems.n104207|lsjx.n104207|τοκ|aw_contract
 verbstems.n104225|lsjx.n104225|τολμ|aw_contract
 verbstems.n104247|lsjx.n104247|τομ|aw_contract

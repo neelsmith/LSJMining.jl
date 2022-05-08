@@ -13,19 +13,23 @@ include("phonology.jl")
 
 
 include("nouns/decl2.jl")
+include("nouns/nouns.jl")
 
 include("adjs/firstsecond.jl")
+include("adjs/adjectives.jl")
 
 include("verbs/regular.jl")
 include("verbs/prefixes.jl")
 include("verbs/morphemes.jl")
 include("verbs/verbs.jl")
 
-export loadmorphdata
+include("morphology.jl")
+
+export kanones, loadmorphdata
 
 export decl2
 export adjs1_2
-export verbs
+export verbs, nouns, adjectives
 
 
 export vowelverb, liquidverb, stopverb, contractverb, izwverb, sigmaverb, numiverb, irregmiverb, irregomega
