@@ -7,7 +7,7 @@ $(SIGNATURES)
 """
 function kanones(src,target,kroot)
     v = loadmorphdata(src, kroot)
-    #verbs(v, target)
-    #nouns(v, target)
-    #adjectives(v, target) # HANGING IN omega!
+    verbs(v, target)
+    nouns(v, target)
+    adjectives(v, target) # HANGING IN omega!
 end

@@ -26,7 +26,6 @@ verbstems.n16051|lsjx.n16051|ἀρχ|w_regular
 verbstems.n16609|lsjx.n16609|ἀστραπτ|w_regular
 verbstems.n17010|lsjx.n17010|ἀτεμβ|w_regular
 verbstems.n17285|lsjx.n17285|ᾀττ|w_regular
-verbstems.n18836|lsjx.n18836|ἀχ|w_regular
 verbstems.n19327|lsjx.n19327|βαπτ|w_regular
 verbstems.n19428|lsjx.n19428|βαρυθ|w_regular
 verbstems.n19576|lsjx.n19576|βασκ|w_regular
@@ -41,7 +40,6 @@ verbstems.n20616|lsjx.n20616|βουλιμωττ|w_regular
 verbstems.n20814|lsjx.n20814|βραπτ|w_regular
 verbstems.n20952|lsjx.n20952|βρεχ|w_regular
 verbstems.n20981|lsjx.n20981|βριθ|w_regular
-verbstems.n21083|lsjx.n21083|βροχ|w_regular
 verbstems.n21102|lsjx.n21102|βρυκ|w_regular
 verbstems.n21569|lsjx.n21569|γαμισκ|w_regular
 verbstems.n21717|lsjx.n21717|γεγωνισκ|w_regular
@@ -58,7 +56,6 @@ verbstems.n23465|lsjx.n23465|δαρδαπτ|w_regular
 verbstems.n23619|lsjx.n23619|δεδοικ|w_regular
 verbstems.n24281|lsjx.n24281|δεφ|w_regular
 verbstems.n24318|lsjx.n24318|δῃκ|w_regular
-verbstems.n27035|lsjx.n27035|δικ|w_regular
 verbstems.n28378|lsjx.n28378|δρεπτ|w_regular
 verbstems.n28379|lsjx.n28379|δρεπ|w_regular
 verbstems.n28511|lsjx.n28511|δρυπτ|w_regular
@@ -69,8 +66,7 @@ verbstems.n29807|lsjx.n29807|Δωρισδ|w_regular
 verbstems.n30728|lsjx.n30728|ἐδ|w_regular
 verbstems.n30814|lsjx.n30814|ἐθ|w_regular
 verbstems.n30835|lsjx.n30835|εἰβ|w_regular
-verbstems.n30876|lsjx.n30876|εἰδ|w_regular
-verbstems.n30926|lsjx.n30926|ἐϊκασδ|w_regular
+verbstems.n31036|lsjx.n31036|εἰκ|w_regular
 verbstems.n31319|lsjx.n31319|εισγραφ|w_regular
 verbstems.n31427|lsjx.n31427|ἐϊσκ|w_regular
 verbstems.n31588|lsjx.n31588|ἑκαστατ|w_regular
@@ -85,6 +81,7 @@ verbstems.n33910|lsjx.n33910|ἐλπ|w_regular
 verbstems.n35323|lsjx.n35323|ἐνδ|w_regular
 verbstems.n42042|lsjx.n42042|ἐπ|w_regular
 verbstems.n42043|lsjx.n42043|ἐπ|w_regular
+verbstems.n42224|lsjx.n42224|ἐργ|w_regular
 verbstems.n42230|lsjx.n42230|ἐρδ|w_regular
 verbstems.n42265|lsjx.n42265|ἐρεθ|w_regular
 verbstems.n42267|lsjx.n42267|ἐρειδ|w_regular
@@ -144,7 +141,6 @@ verbstems.n56974|lsjx.n56974|κευθ|w_regular
 verbstems.n57073|lsjx.n57073|κηδ|w_regular
 verbstems.n57305|lsjx.n57305|κιαθ|w_regular
 verbstems.n57380|lsjx.n57380|κικλησκ|w_regular
-verbstems.n57387|lsjx.n57387|κικ|w_regular
 verbstems.n57414|lsjx.n57414|κιμπτ|w_regular
 verbstems.n57817|lsjx.n57817|κλεπτ|w_regular
 verbstems.n57857|lsjx.n57857|κληϊσκ|w_regular
@@ -168,6 +164,7 @@ verbstems.n61162|lsjx.n61162|κυφ|w_regular
 verbstems.n61875|lsjx.n61875|λαμπ|w_regular
 verbstems.n61959|lsjx.n61959|λαπτ|w_regular
 verbstems.n62023|lsjx.n62023|λασκ|w_regular
+verbstems.n62205|lsjx.n62205|λεγ|w_regular
 verbstems.n62218|lsjx.n62218|λειβ|w_regular
 verbstems.n62303|lsjx.n62303|λειχ|w_regular
 verbstems.n62568|lsjx.n62568|λεπτ|w_regular
@@ -269,7 +266,6 @@ verbstems.n92383|lsjx.n92383|ῥηττ|w_regular
 verbstems.n92532|lsjx.n92532|ῥιπτ|w_regular
 verbstems.n92739|lsjx.n92739|ῥοφ|w_regular
 verbstems.n92837|lsjx.n92837|ῥυπτ|w_regular
-verbstems.n92902|lsjx.n92902|ῥυφ|w_regular
 verbstems.n92962|lsjx.n92962|ῥωχ|w_regular
 verbstems.n93172|lsjx.n93172|σαλπιττ|w_regular
 verbstems.n93422|lsjx.n93422|σαττ|w_regular
@@ -314,7 +310,6 @@ verbstems.n97435|lsjx.n97435|στυφ|w_regular
 verbstems.n101698|lsjx.n101698|σφιγγ|w_regular
 verbstems.n101782|lsjx.n101782|σφυσδ|w_regular
 verbstems.n101783|lsjx.n101783|σφυττ|w_regular
-verbstems.n101827|lsjx.n101827|σχεθ|w_regular
 verbstems.n102118|lsjx.n102118|σωχ|w_regular
 verbstems.n102206|lsjx.n102206|τακ|w_regular
 verbstems.n102759|lsjx.n102759|τεγγ|w_regular
@@ -368,7 +363,6 @@ verbstems.n112797|lsjx.n112797|φωγ|w_regular
 verbstems.n112864|lsjx.n112864|φωσκ|w_regular
 verbstems.n112993|lsjx.n112993|χαλεπτ|w_regular
 verbstems.n113469|lsjx.n113469|χασκ|w_regular
-verbstems.n114095|lsjx.n114095|χλαδ|w_regular
 verbstems.n114569|lsjx.n114569|χρεμεθ|w_regular
 verbstems.n114647|lsjx.n114647|χρῃσδ|w_regular
 verbstems.n114716|lsjx.n114716|χριμπτ|w_regular

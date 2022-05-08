@@ -240,6 +240,7 @@ verbstems.n53528|lsjx.n53528|καρυκευ|w_regular
 verbstems.n53624|lsjx.n53624|κασσυ|w_regular
 verbstems.n53640|lsjx.n53640|κασωρευ|w_regular
 verbstems.n56363|lsjx.n56363|κεδαι|w_regular
+verbstems.n56496|lsjx.n56496|κελευ|w_regular
 verbstems.n56683|lsjx.n56683|κεραι|w_regular
 verbstems.n56694|lsjx.n56694|κεραμευ|w_regular
 verbstems.n56955|lsjx.n56955|κεστρευ|w_regular
@@ -584,7 +585,6 @@ verbstems.n103918|lsjx.n103918|τιθασευ|w_regular
 verbstems.n103924|lsjx.n103924|τιθηνευ|w_regular
 verbstems.n103983|lsjx.n103983|τιμητευ|w_regular
 verbstems.n104017|lsjx.n104017|τιμωρησει|w_regular
-verbstems.n104075|lsjx.n104075|τιτευ|w_regular
 verbstems.n104080|lsjx.n104080|τιτθευ|w_regular
 verbstems.n104240|lsjx.n104240|τολυπευ|w_regular
 verbstems.n104296|lsjx.n104296|τοξευ|w_regular
@@ -618,7 +618,6 @@ verbstems.n110727|lsjx.n110727|φθι|w_regular
 verbstems.n111014|lsjx.n111014|φιλητευ|w_regular
 verbstems.n111436|lsjx.n111436|φιλοπρωτευ|w_regular
 verbstems.n111683|lsjx.n111683|φιτυ|w_regular
-verbstems.n111763|lsjx.n111763|φλευ|w_regular
 verbstems.n111774|lsjx.n111774|φληνυ|w_regular
 verbstems.n111834|lsjx.n111834|φλοι|w_regular
 verbstems.n111881|lsjx.n111881|φλυ|w_regular
@@ -655,7 +654,6 @@ verbstems.n114265|lsjx.n114265|χοευ|w_regular
 verbstems.n114368|lsjx.n114368|χονδρευ|w_regular
 verbstems.n114403|lsjx.n114403|χορδευ|w_regular
 verbstems.n114421|lsjx.n114421|χορευ|w_regular
-verbstems.n114551|lsjx.n114551|χραυ|w_regular
 verbstems.n114648|lsjx.n114648|χρησιμευ|w_regular
 verbstems.n114726|lsjx.n114726|χρι|w_regular
 verbstems.n115151|lsjx.n115151|χωλευ|w_regular
@@ -665,7 +663,6 @@ verbstems.n115374|lsjx.n115374|ψαυ|w_regular
 verbstems.n115406|lsjx.n115406|ψει|w_regular
 verbstems.n115784|lsjx.n115784|ψι|w_regular
 verbstems.n115809|lsjx.n115809|ψοφευ|w_regular
-verbstems.n116025|lsjx.n116025|ψω|w_regular
 verbstems.n116247|lsjx.n116247|ὠνησει|w_regular
 verbstems.n116322|lsjx.n116322|ὠρευ|w_regular
 verbstems.n116371|lsjx.n116371|ὡρονομευ|w_regular
