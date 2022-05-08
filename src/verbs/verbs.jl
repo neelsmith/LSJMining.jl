@@ -1,10 +1,4 @@
-# Add these classes to the vector as soon as Kanones rules
-# are complete for that type:
-#=
-regularverbfilters = [
-    vowelverb, liquidverb, stopverb, contractverb, izwverb, sigmaverb, numiverb, irregmiverb, irregomega
-]
-=#
+"Verb patterns to quarry from LSJ."
 regularverbtypes = [
     "stopverb",
     "vowelverb" , 
@@ -18,6 +12,7 @@ regularverbtypes = [
 ]
 
 
+"Boolean filtering function to use for each LSJ verb pattern."
 verbfilters = Dict(
     "stopverb" => stopverb,
 
@@ -32,6 +27,8 @@ verbfilters = Dict(
     #irregmiverb, irregomega
 )
 
+
+"Mapping of LSJ verb pattern to Kanones inflectional class."
 infltypemap = Dict(
     "stopverb" => "w_regular",
    
@@ -44,12 +41,33 @@ infltypemap = Dict(
     "sigmaverb" => "w_pp1", 
     "numiverb" => "numi"
 )
+
+"""Create Kanones stem from LSJ lemma."""
 function trimlemma(s::AbstractString, verbtype::AbstractString)
-    if verbtype == "stopverb"
+    @info("s, verbtype",s,verbtype)
+    
+    if (verbtype == "stopverb") || (verbtype == "vowelverb") || (verbtype == "sigmaverb") || (verbtype == "liquidverb")
         replace(s, r"ω$" => "") |> rmaccents
+    elseif verbtype == "econtract"
+        replace(s, r"έω$" => "") |> rmaccents
+    elseif verbtype == "acontract"
+        replace(s, r"άω$" => "") |> rmaccents
+    elseif verbtype == "oontract"
+        replace(s, r"όω$" => "") |> rmaccents
+    elseif verbtype == "izw"
+        replace(s, r"ίζω$" => "") |> rmaccents
+    elseif verbtype == "numiverb"
+        replace(s, r"νυμι$" => "") |> rmaccents
+    else
+
     end
+    
 end
 
+
+"""Find morphological data in `v` for ID value `s`.
+($SIGNATURES)
+"""
 function lookup(s::AbstractString, v::Vector{MorphData})
     matches = filter(m -> m.label == s, v)
     if isempty(matches)
@@ -64,15 +82,16 @@ function lookup(s::AbstractString, v::Vector{MorphData})
 
 end
 
+
+"""Extract all verbs from LSJ and write stems to Kanones
+data set.
+$(SIGNATURES)
+"""
 function verbs(v::Vector{MorphData}, target)
-
-
     for vtype in regularverbtypes
         f = verbfilters[vtype]
         mdata = filter(d -> f(d), v)
         @info("""Regular verb type "$(f)": $(length(mdata)) verbs to analyze""")
-
-
 
         stripped = map(m -> lowercase(m.label) |> stripbreathing,  mdata)
         lemmastrings = map(d -> d.label, mdata)
