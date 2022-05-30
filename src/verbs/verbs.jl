@@ -70,12 +70,14 @@ end
 """
 function lookup(s::AbstractString, v::Vector{MorphData})
     matches = filter(m -> m.label == s, v)
+    @debug("Filtered $(s)")
     if isempty(matches)
         @warn("No match for label $(s)")
         nothing
     elseif length(matches) > 1
         @warn("Multiple matches for label $(s). Omitting.")
         nothing
+    
     else
         matches[1]
     end
@@ -87,7 +89,7 @@ end
 data set.
 $(SIGNATURES)
 """
-function writeverbs(
+function writesimplexverbs(
     verblines,   
     vtype::AbstractString, 
     kdataset::AbstractString)
@@ -96,8 +98,18 @@ function writeverbs(
     open(verbfile,"w") do io
         write(io, join(verblines, "\n"))
     end
+end
 
-    @warn("Compound verbs not yet recorded")
+
+function writecompoundverbs(
+    verblines,   
+    vtype::AbstractString, 
+    kdataset::AbstractString)
+    verbfile = joinpath(kdataset,"stems-tables", "verbs-compound", "$(vtype).cex")
+    @info("Writing compound verbs to file")
+    open(verbfile,"w") do io
+        write(io, join(verblines, "\n"))
+    end
 end
 
 function verbsfortype(v::Vector{MorphData}, 
@@ -110,16 +122,9 @@ function verbsfortype(v::Vector{MorphData},
     lemmastrings = map(d -> d.label, mdata)
     splits = map(s -> splitmorphemes(s, stripped, withfailure = true), lemmastrings) 
 
-    compounds = filter(pr -> contains(pr[1],"#"), splits )
     simplex = filter(pr -> ! contains(pr[1],"#") &&  isempty(pr[2]), splits )
+    compounds = filter(pr -> contains(pr[1],"#"), splits )
     uncertain = filter(pr -> ! isempty(pr[2]) && !contains(pr[1],"#"), splits )
-    @info("\n\n")
-    @info("Totals for type $(vtype)")
-    @info("====== === ==== " * repeat("=", length(vtype)))
-    @info("Compound verb entries:", length(compounds))
-    @info("Simplex verb entries:", length(simplex))
-    @info("Stems with uncertain morpheme boundaries: ",length(uncertain))
-    @info("Out of $(length(mdata)) stems, total analyzed:", length(compounds) + length(simplex) + length(uncertain))
 
     simplexlines = ["Rule|LexicalEntity|Stem|StemClass"]
     for (i, pr) in enumerate(simplex)
@@ -138,7 +143,47 @@ function verbsfortype(v::Vector{MorphData},
             push!(simplexlines, join(columns,"|"))
         end
     end
-    simplexlines
+
+    compoundlines = ["Stem|LexicalEntity|Prefix|Simplex|Note"]
+    # e.g.:
+    # compounds.n30252|lsj.n30252|ἐν|lsj.n56496|ἐγκελεύω
+
+    for (i, pr) in enumerate(compounds)
+        if i % 100 == 0
+            @info("$(i)…")
+        end
+
+        compstring = pr[1]
+        pieces = split(compstring,"#")
+        restored = replace(compstring, "#" => "")
+        verb = lookup(restored, mdata)
+        rootverb = lookup(pieces[2], mdata)
+        if ! isnothing(verb) && ! isnothing(rootverb)
+            columns = 
+            [ "compounds.$(verb.id)",
+            "lsjx.$(verb.id)",
+            pieces[1],
+            rootverb.id,
+            restored
+            ]
+            push!(compoundlines, join(columns,"|"))
+        end
+    end
+
+    @info("\n\n")
+    @info("Totals examined for type $(vtype)")
+    @info("====== ======== ==== " * repeat("=", length(vtype)))
+    @info("Compound verb entries:", length(compounds))
+    @info("Simplex verb entries:", length(simplex))
+    @info("Stems with uncertain morpheme boundaries: ",length(uncertain))
+    @info("Out of $(length(mdata)) stems, total analyzed:", length(compounds) + length(simplex) + length(uncertain))
+    @info("\n")
+    @info("Total kept:")
+    @info("----- ----")
+    @info("$(length(simplexlines)) simplex verbs")
+    @info("$(length(compoundlines)) compound verbs")
+    @info*("\n")
+    (simplexlines, compoundlines)
 end
 
 """Extract all verbs from LSJ and format delimited-text representation for Kanones.
@@ -148,12 +193,18 @@ function verbs(v::Vector{MorphData},
     registry, target::AbstractString)
 
     for vtype in regularverbtypes
-        results = verbsfortype(v, vtype)
-        registered = filter(results) do ln
+        (simplexresults, compoundresults) = verbsfortype(v, vtype)
+        registeredsimplex = filter(simplexresults) do ln
             cols = split(ln, "|")
             "|$(cols[2])|" in registry
         end
-        writeverbs(registered, vtype, target)
+        writesimplexverbs(registeredsimplex, vtype, target)
+
+        registeredcompounds = filter(simplexresults) do ln
+            cols = split(ln, "|")
+            "|$(cols[2])|" in registry
+        end
+        writecompoundverbs(registeredcompounds, vtype, target)
     end
     
 end
