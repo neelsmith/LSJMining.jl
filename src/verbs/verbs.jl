@@ -44,7 +44,7 @@ infltypemap = Dict(
 
 """Create Kanones stem from LSJ lemma."""
 function trimlemma(s::AbstractString, verbtype::AbstractString)
-    @info("s, verbtype",s,verbtype)
+    @debug("s, verbtype",s,verbtype)
     
     if (verbtype == "stopverb") || (verbtype == "vowelverb") || (verbtype == "sigmaverb") || (verbtype == "liquidverb")
         replace(s, r"ω$" => "") |> rmaccents
@@ -83,51 +83,72 @@ function lookup(s::AbstractString, v::Vector{MorphData})
 end
 
 
-"""Extract all verbs from LSJ and write stems to Kanones
+"""Extract all verbs from LSJ and write stems to a Kanones
 data set.
 $(SIGNATURES)
 """
-function verbs(v::Vector{MorphData}, target)
-    for vtype in regularverbtypes
-        f = verbfilters[vtype]
-        mdata = filter(d -> f(d), v)
-        @info("""Regular verb type "$(f)": $(length(mdata)) verbs to analyze""")
-
-        stripped = map(m -> lowercase(m.label) |> stripbreathing,  mdata)
-        lemmastrings = map(d -> d.label, mdata)
-        splits = map(s -> splitmorphemes(s, stripped, withfailure = true), lemmastrings) 
-
-        compounds = filter(pr -> contains(pr[1],"#"), splits )
-        simplex = filter(pr -> ! contains(pr[1],"#") &&  isempty(pr[2]), splits )
-        uncertain = filter(pr -> ! isempty(pr[2]) && !contains(pr[1],"#"), splits )
-        @info("Compound verb entries:", length(compounds))
-        @info("Simplex verb entries:", length(simplex))
-        @info("Stems with uncertain morpheme boundaries: ",length(uncertain))
-        @info("Out of $(length(mdata)) stems, total analyzed:", length(compounds) + length(simplex) + length(uncertain))
-
-        simplexlines = ["Rule|LexicalEntity|Stem|StemClass"]
-        for (i, pr) in enumerate(simplex)
-            if i % 100 == 0
-                @info("$(i)...")
-            end
-
-            verb = lookup(pr[1], mdata)
-            if ! isnothing(verb)
-                columns = 
-                [ "verbstems.$(verb.id)",
-                "lsjx.$(verb.id)",
-                trimlemma(verb.label, vtype),
-                infltypemap[vtype]
-                ]
-                push!(simplexlines, join(columns,"|"))
-            end
-        end
-        verbfile = joinpath(target,"stems-tables", "verbs-simplex", "$(vtype).cex")
-        @info("Writing simplex verbs to file")
-        open(verbfile,"w") do io
-            write(io, join(simplexlines, "\n"))
-        end
-
-        @warn("Compound verbs not yet recorded")
+function writeverbs(
+    verblines,   
+    vtype::AbstractString, 
+    kdataset::AbstractString)
+    verbfile = joinpath(kdataset,"stems-tables", "verbs-simplex", "$(vtype).cex")
+    @info("Writing simplex verbs to file")
+    open(verbfile,"w") do io
+        write(io, join(verblines, "\n"))
     end
+
+    @warn("Compound verbs not yet recorded")
+end
+
+function verbsfortype(v::Vector{MorphData}, 
+    vtype::AbstractString)
+    f = verbfilters[vtype]
+    mdata = filter(d -> f(d), v)
+    @info("""Regular verb type "$(f)": $(length(mdata)) verbs to analyze""")
+
+    stripped = map(m -> lowercase(m.label) |> stripbreathing,  mdata)
+    lemmastrings = map(d -> d.label, mdata)
+    splits = map(s -> splitmorphemes(s, stripped, withfailure = true), lemmastrings) 
+
+    compounds = filter(pr -> contains(pr[1],"#"), splits )
+    simplex = filter(pr -> ! contains(pr[1],"#") &&  isempty(pr[2]), splits )
+    uncertain = filter(pr -> ! isempty(pr[2]) && !contains(pr[1],"#"), splits )
+    @info("\n\n")
+    @info("Totals for type $(vtype)")
+    @info("====== === ==== " * repeat("=", length(vtype)))
+    @info("Compound verb entries:", length(compounds))
+    @info("Simplex verb entries:", length(simplex))
+    @info("Stems with uncertain morpheme boundaries: ",length(uncertain))
+    @info("Out of $(length(mdata)) stems, total analyzed:", length(compounds) + length(simplex) + length(uncertain))
+
+    simplexlines = ["Rule|LexicalEntity|Stem|StemClass"]
+    for (i, pr) in enumerate(simplex)
+        if i % 100 == 0
+            @info("$(i)…")
+        end
+
+        verb = lookup(pr[1], mdata)
+        if ! isnothing(verb)
+            columns = 
+            [ "verbstems.$(verb.id)",
+            "lsjx.$(verb.id)",
+            trimlemma(verb.label, vtype),
+            infltypemap[vtype]
+            ]
+            push!(simplexlines, join(columns,"|"))
+        end
+    end
+    simplexlines
+end
+
+"""Extract all verbs from LSJ and format delimited-text representation for Kanones.
+$(SIGNATURES)
+"""
+function verbs(v::Vector{MorphData}, target::AbstractString)
+
+    for vtype in regularverbtypes
+        results = verbsfortype(v, vtype)
+        writeverbs(results, vtype, target)
+    end
+    
 end

@@ -1,7 +1,7 @@
 #PREFIXES = readlines("compounding-prefixes.txt") .|> PG.nfkc
 
 function prefixes() 
-    keys(prefixdict ) .|> PG.nfkc
+    keys(prefixdict) .|> PG.nfkc
     #readlines("compounding-prefixes.txt") 
 end
 
@@ -35,7 +35,7 @@ function splitmorphemes(s, striplist; withfailure = false)
         if stemexists(divided, striplist)
             success = divided
         else
-            @warn("Didn't find simplex for", divided)
+            @debug("Didn't find simplex for", divided)
             failure = divided
             pieces = split(divided,"#")
 
@@ -49,7 +49,7 @@ function splitmorphemes(s, striplist; withfailure = false)
                 @debug("Subdivided", subdivided)
                 success = replace(subdivided, r"^#" => "" )
             else
-                @warn("Subdivided failed", subdivided)
+                @warn("Failed on both", divided, subdivided)
                 failure = subdivided
                 success = s
             end

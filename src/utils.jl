@@ -11,7 +11,7 @@ function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
         mdata = readlines(f)[2:end] .|> morphData
         for (i,m) in enumerate(mdata)
             if i % 100 == 0
-                @info("$(i)...")
+                @info("$(i)…")
             end
             if validstring(m.label, ortho)
                 push!(v, m)
@@ -69,7 +69,7 @@ function registered(v::Vector{MorphData}, lsjx)
     filter(v) do d
         count = count + 1
         if count % 1000 == 0
-            @info("$(count) $(v[count]) ...")
+            @info("$(count) $(v[count]) …")
         end
         d.id in lsjx
     end
@@ -149,7 +149,7 @@ function invalidortho(cexdir)
         @info("Analyzing $(length(mdata)) records from $(f)")
         for (i,m) in enumerate(mdata)
             if i % 100 == 0
-                #@info("$(i)...")
+                #@info("$(i)…")
             end
             
             if ! validstring(m.label, ortho)

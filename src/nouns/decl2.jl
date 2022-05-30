@@ -14,7 +14,7 @@ function decl2masc(v::Vector{MorphData}, target)
     mlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(mnouns)
         if i % 100 == 0
-            @info("$(i)...")
+            @info("$(i)…")
         end
         columns = 
         [ "nounstems.$(noun.id)",
@@ -43,7 +43,7 @@ function decl2neut(v::Vector{MorphData}, target)
     neutlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(neutnouns)
         if i % 100 == 0
-            @info("$(i)...")
+            @info("$(i)…")
         end
         columns = 
         [ "nounstems.$(noun.id)",
