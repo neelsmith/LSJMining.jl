@@ -3,7 +3,18 @@
 of repository, and filter for entries with valid orthography only.
 $(SIGNATURES)
 """
-function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
+function loadmorphdata(cexdir, kroot)
+    v = loadmorphdata(cexdir)
+    lsjx = registry(kroot)
+    @info("Filtering for valid ids.")
+    @info("Please be patient.")
+    registered(v, lsjx)
+end
+
+"""Load all morphology data from files in `cex` directory of repository.
+$(SIGNATURES)
+"""
+function loadmorphdata(cexdir)
     ortho = literaryGreek()
     v = Vector{MorphData}()
     for i in collect(1:27)
@@ -32,10 +43,7 @@ function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
             end
         end
     end
-    lsjx = registry(kroot)
-    @info("Filtering for valid ids.")
-    @info("Please be patient.")
-    registered(v, lsjx)
+    v
 end
 
 
