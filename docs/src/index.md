@@ -12,6 +12,8 @@ Overview of repository's contents:
 ## Some things you can do
 
 
+### Read in a vector of morphological data
+
 Read the contents of the repository's `cex` directory into `MorphData` objects, while using data in a copy of the `Kanones.jl` repository to filter for valid lexical ids.
 
 ```
@@ -19,3 +21,14 @@ morph = loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
  ```
 
  The vector `morph` should have around 110,000 `MorphData` objects.
+
+
+ ### Write Kanones stem files
+
+ Everything `LSJMining` knows about:
+
+ ```
+ kanones(src, target, kroot)
+ ```
+
+
