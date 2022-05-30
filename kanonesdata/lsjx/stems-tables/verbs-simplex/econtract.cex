@@ -1,4 +1,3 @@
-Rule|LexicalEntity|Stem|StemClass
 verbstems.n37|lsjx.n37|ἀβακ|ew_contract
 verbstems.n102|lsjx.n102|ἀβλαστ|ew_contract
 verbstems.n108|lsjx.n108|ἀβλεπτ|ew_contract
@@ -576,7 +575,6 @@ verbstems.n24454|lsjx.n24454|Δ.Η.μοστροφ|ew_contract
 verbstems.n27215|lsjx.n27215|Διονυσομαν|ew_contract
 verbstems.n27822|lsjx.n27822|δογματογραφ|ew_contract
 verbstems.n27825|lsjx.n27825|δογματοποι|ew_contract
-verbstems.n27847|lsjx.n27847|δοκ|ew_contract
 verbstems.n27915|lsjx.n27915|δολιχοδρομ|ew_contract
 verbstems.n27941|lsjx.n27941|δολορραφ|ew_contract
 verbstems.n27948|lsjx.n27948|δολοφον|ew_contract
@@ -1229,7 +1227,6 @@ verbstems.n52435|lsjx.n52435|Χρο|ew_contract
 verbstems.n52497|lsjx.n52497|καλαμηφορ|ew_contract
 verbstems.n52517|lsjx.n52517|καλαμογλυφ|ew_contract
 verbstems.n52536|lsjx.n52536|καλαμουργ|ew_contract
-verbstems.n52571|lsjx.n52571|καλ|ew_contract
 verbstems.n52598|lsjx.n52598|καλιστρ|ew_contract
 verbstems.n52631|lsjx.n52631|καλλιγραφ|ew_contract
 verbstems.n52646|lsjx.n52646|καλλιεργ|ew_contract
@@ -1557,7 +1554,6 @@ verbstems.n63814|lsjx.n63814|λοιδορ|ew_contract
 verbstems.n63842|lsjx.n63842|λοιπογραφ|ew_contract
 verbstems.n63866|lsjx.n63866|λοξοβλεπτ|ew_contract
 verbstems.n63871|lsjx.n63871|λοξοπορ|ew_contract
-verbstems.n63904|lsjx.n63904|λου|ew_contract
 verbstems.n63931|lsjx.n63931|λουτροφορ|ew_contract
 verbstems.n63933|lsjx.n63933|λουτροχο|ew_contract
 verbstems.n63958|lsjx.n63958|λοφοπωλ|ew_contract

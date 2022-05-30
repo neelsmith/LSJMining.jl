@@ -1,4 +1,3 @@
-Rule|LexicalEntity|Stem|StemClass
 verbstems.n380|lsjx.n380|ἀγγαρευ|w_regular
 verbstems.n529|lsjx.n529|ἁγιστευ|w_regular
 verbstems.n554|lsjx.n554|ἀγκιστρευ|w_regular
@@ -411,7 +410,6 @@ verbstems.n74429|lsjx.n74429|ὁπερδικι|w_regular
 verbstems.n74433|lsjx.n74433|ὀπηδευ|w_regular
 verbstems.n74457|lsjx.n74457|ὀπιπευ|w_regular
 verbstems.n74545|lsjx.n74545|ὁπλιτευ|w_regular
-verbstems.n74658|lsjx.n74658|ὀπτευ|w_regular
 verbstems.n74682|lsjx.n74682|ὀπυι|w_regular
 verbstems.n74869|lsjx.n74869|ὀρεσκευ|w_regular
 verbstems.n74912|lsjx.n74912|ὀρθευ|w_regular

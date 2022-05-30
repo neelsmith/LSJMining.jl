@@ -14,7 +14,7 @@ function adjs1_2(v::Vector{MorphData}, target)
     adjlines = ["StemUrn|LexicalEntity|Stem|InflClass|Accent"]
     for (i, adj) in enumerate(adjs)
         if i % 100 == 0
-            @info("$(i)...")
+            @info("$(i)…")
         end
         #adjstems.n17907a|lsj.n17907|αὐτ|os_h_on_pos|inflectionaccented|
         columns = 

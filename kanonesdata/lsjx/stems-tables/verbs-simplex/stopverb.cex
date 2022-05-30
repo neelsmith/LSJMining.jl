@@ -1,9 +1,7 @@
-Rule|LexicalEntity|Stem|StemClass
 verbstems.n466|lsjx.n466|ἀγερεθ|w_regular
 verbstems.n1070|lsjx.n1070|ἀγχοτατ|w_regular
 verbstems.n1081|lsjx.n1081|ἀγχ|w_regular
 verbstems.n1083|lsjx.n1083|ἀγ|w_regular
-verbstems.n1527|lsjx.n1527|ᾳδ|w_regular
 verbstems.n1587|lsjx.n1587|ἀειδ|w_regular
 verbstems.n1782|lsjx.n1782|ἀεσκ|w_regular
 verbstems.n1920|lsjx.n1920|ἀθελγ|w_regular
@@ -22,7 +20,6 @@ verbstems.n14924|lsjx.n14924|ἀρδ|w_regular
 verbstems.n14954|lsjx.n14954|ἀρεσκ|w_regular
 verbstems.n14975|lsjx.n14975|ἀρηγ|w_regular
 verbstems.n15299|lsjx.n15299|ἁρμοττ|w_regular
-verbstems.n16051|lsjx.n16051|ἀρχ|w_regular
 verbstems.n16609|lsjx.n16609|ἀστραπτ|w_regular
 verbstems.n17010|lsjx.n17010|ἀτεμβ|w_regular
 verbstems.n17285|lsjx.n17285|ᾀττ|w_regular

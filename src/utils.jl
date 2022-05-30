@@ -1,10 +1,20 @@
 
 """Load morphology data from files in `cex` directory
-of repository, and filter for entries with valid orthography
-only.
+of repository, and filter for entries with valid orthography only.
 $(SIGNATURES)
 """
-function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
+function loadmorphdata(cexdir, kroot)
+    v = loadmorphdata(cexdir)
+    lsjx = registry(kroot)
+    @info("Filtering for valid ids.")
+    @info("Please be patient.")
+    registered(v, lsjx)
+end
+
+"""Load all morphology data from files in `cex` directory of repository.
+$(SIGNATURES)
+"""
+function loadmorphdata(cexdir)
     ortho = literaryGreek()
     v = Vector{MorphData}()
     for i in collect(1:27)
@@ -12,7 +22,7 @@ function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
         mdata = readlines(f)[2:end] .|> morphData
         for (i,m) in enumerate(mdata)
             if i % 100 == 0
-                @info("$(i)...")
+                @info("$(i)…")
             end
             if validstring(m.label, ortho)
                 push!(v, m)
@@ -33,15 +43,11 @@ function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
             end
         end
     end
-    lsjx = registry(kroot)
-    @info("Filtering for valid ids.")
-    @info("Please be patient.")
-    registered(v, lsjx)
+    v
 end
 
 
-"""Read in list of all values in Kanones' `lsjx` collection
-of lexemes.
+"""Read in list of all values in Kanones' `lsjx` collection of lexemes.
 $(SIGNATURES)
 """
 function registry(kroot = joinpath("..", "Kanones.jl"))
@@ -50,12 +56,22 @@ function registry(kroot = joinpath("..", "Kanones.jl"))
     idlist = []
     for ln in filter(l -> !isempty(l), data)
         cols = split(ln,"|")
-        pieces = split(cols[1],".")
-        push!(idlist, pieces[2] )
+        if length(cols) < 2
+            @warn("Invalid input: too few columns in $(ln)")
+        else
+            pieces = split(cols[1],".")
+            push!(idlist, pieces[2] )
+        end
     end
     idlist
 end
 
+"""Read in list of all values in Kanones' `lsjx` collection of lexemes formatted as a single column of delimited text.
+$(SIGNATURES)
+"""
+function registrycolumns(kroot = joinpath("..", "Kanones.jl"))
+    map(id -> "|lsjx." * id * "|", registry(kroot))
+end
 
 """Filter `v` to include only entries appearing in 
 list of ID values `lsjx`.
@@ -66,7 +82,7 @@ function registered(v::Vector{MorphData}, lsjx)
     filter(v) do d
         count = count + 1
         if count % 1000 == 0
-            @info("$(count) $(v[count]) ...")
+            @info("$(count) $(v[count]) …")
         end
         d.id in lsjx
     end
@@ -146,7 +162,7 @@ function invalidortho(cexdir)
         @info("Analyzing $(length(mdata)) records from $(f)")
         for (i,m) in enumerate(mdata)
             if i % 100 == 0
-                #@info("$(i)...")
+                #@info("$(i)…")
             end
             
             if ! validstring(m.label, ortho)

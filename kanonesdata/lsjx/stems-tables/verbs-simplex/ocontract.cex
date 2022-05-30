@@ -1,4 +1,3 @@
-Rule|LexicalEntity|Stem|StemClass
 verbstems.n269|lsjx.n269|nothing|aw_contract
 verbstems.n309|lsjx.n309|nothing|aw_contract
 verbstems.n601|lsjx.n601|nothing|aw_contract
@@ -96,7 +95,6 @@ verbstems.n24058|lsjx.n24058|nothing|aw_contract
 verbstems.n24145|lsjx.n24145|nothing|aw_contract
 verbstems.n24272|lsjx.n24272|nothing|aw_contract
 verbstems.n24312|lsjx.n24312|nothing|aw_contract
-verbstems.n24342|lsjx.n24342|nothing|aw_contract
 verbstems.n24447|lsjx.n24447|nothing|aw_contract
 verbstems.n24472|lsjx.n24472|nothing|aw_contract
 verbstems.n24490|lsjx.n24490|nothing|aw_contract
@@ -444,7 +442,6 @@ verbstems.n93557|lsjx.n93557|nothing|aw_contract
 verbstems.n93575|lsjx.n93575|nothing|aw_contract
 verbstems.n93717|lsjx.n93717|nothing|aw_contract
 verbstems.n93777|lsjx.n93777|nothing|aw_contract
-verbstems.n93816|lsjx.n93816|nothing|aw_contract
 verbstems.n93918|lsjx.n93918|nothing|aw_contract
 verbstems.n93939|lsjx.n93939|nothing|aw_contract
 verbstems.n93960|lsjx.n93960|nothing|aw_contract
