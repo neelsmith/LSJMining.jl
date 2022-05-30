@@ -144,11 +144,16 @@ end
 """Extract all verbs from LSJ and format delimited-text representation for Kanones.
 $(SIGNATURES)
 """
-function verbs(v::Vector{MorphData}, target::AbstractString)
+function verbs(v::Vector{MorphData}, 
+    registry, target::AbstractString)
 
     for vtype in regularverbtypes
         results = verbsfortype(v, vtype)
-        writeverbs(results, vtype, target)
+        registered = filter(results) do ln
+            cols = split(ln, "|")
+            "|$(cols[2])|" in registry
+        end
+        writeverbs(registered, vtype, target)
     end
     
 end

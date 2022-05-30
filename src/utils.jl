@@ -47,8 +47,7 @@ function loadmorphdata(cexdir)
 end
 
 
-"""Read in list of all values in Kanones' `lsjx` collection
-of lexemes.
+"""Read in list of all values in Kanones' `lsjx` collection of lexemes.
 $(SIGNATURES)
 """
 function registry(kroot = joinpath("..", "Kanones.jl"))
@@ -67,6 +66,12 @@ function registry(kroot = joinpath("..", "Kanones.jl"))
     idlist
 end
 
+"""Read in list of all values in Kanones' `lsjx` collection of lexemes formatted as a single column of delimited text.
+$(SIGNATURES)
+"""
+function registrycolumns(kroot = joinpath("..", "Kanones.jl"))
+    map(id -> "|lsx." * id * "|", registry(kroot))
+end
 
 """Filter `v` to include only entries appearing in 
 list of ID values `lsjx`.

@@ -7,7 +7,10 @@ $(SIGNATURES)
 """
 function kanones(src, target, kroot)
     v = loadmorphdata(src, kroot)
-    verbs(v, target)
-    nouns(v, target)
-    adjectives(v, target)
+    lsjx = registrycolumns(kroot)
+
+    verbs(v, lsjx, target)
+    # Rework these to filter on registry:
+    #nouns(v, lsjx, target)
+    #adjectives(v, lsjx, target)
 end
