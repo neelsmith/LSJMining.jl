@@ -70,7 +70,7 @@ end
 $(SIGNATURES)
 """
 function registrycolumns(kroot = joinpath("..", "Kanones.jl"))
-    map(id -> "|lsx." * id * "|", registry(kroot))
+    map(id -> "|lsjx." * id * "|", registry(kroot))
 end
 
 """Filter `v` to include only entries appearing in 

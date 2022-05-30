@@ -106,7 +106,7 @@ function writecompoundverbs(
     vtype::AbstractString, 
     kdataset::AbstractString)
     verbfile = joinpath(kdataset,"stems-tables", "verbs-compound", "$(vtype).cex")
-    @info("Writing compound verbs to file")
+    @info("Writing compound verbs to file $(verbfile)")
     open(verbfile,"w") do io
         write(io, join(verblines, "\n"))
     end
@@ -163,7 +163,7 @@ function verbsfortype(v::Vector{MorphData},
             [ "compounds.$(verb.id)",
             "lsjx.$(verb.id)",
             pieces[1],
-            rootverb.id,
+            "lsjx.$(rootverb.id)",
             restored
             ]
             push!(compoundlines, join(columns,"|"))
@@ -193,6 +193,7 @@ function verbs(v::Vector{MorphData},
     registry, target::AbstractString)
 
     for vtype in regularverbtypes
+        @info("Processing verbs of type $(vtype)")
         (simplexresults, compoundresults) = verbsfortype(v, vtype)
         registeredsimplex = filter(simplexresults) do ln
             cols = split(ln, "|")
@@ -200,11 +201,13 @@ function verbs(v::Vector{MorphData},
         end
         writesimplexverbs(registeredsimplex, vtype, target)
 
-        registeredcompounds = filter(simplexresults) do ln
+        registeredcompounds = filter(compoundresults) do ln
             cols = split(ln, "|")
             "|$(cols[2])|" in registry
         end
-        writecompoundverbs(registeredcompounds, vtype, target)
+        writecompoundverbs(
+            registeredcompounds, vtype, target
+            )
     end
     
 end
