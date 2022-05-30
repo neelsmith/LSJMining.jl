@@ -1,7 +1,6 @@
 
 """Load morphology data from files in `cex` directory
-of repository, and filter for entries with valid orthography
-only.
+of repository, and filter for entries with valid orthography only.
 $(SIGNATURES)
 """
 function loadmorphdata(cexdir, kroot = joinpath("..", "Kanones.jl"))
@@ -50,8 +49,12 @@ function registry(kroot = joinpath("..", "Kanones.jl"))
     idlist = []
     for ln in filter(l -> !isempty(l), data)
         cols = split(ln,"|")
-        pieces = split(cols[1],".")
-        push!(idlist, pieces[2] )
+        if length(cols) < 2
+            @warn("Invalid input: too few columns in $(ln)")
+        else
+            pieces = split(cols[1],".")
+            push!(idlist, pieces[2] )
+        end
     end
     idlist
 end

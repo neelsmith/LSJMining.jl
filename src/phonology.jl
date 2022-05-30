@@ -80,6 +80,10 @@ breathingstripdict = Dict(
     )
 
 
+
+"""Remove breathing from string.
+$(SIGNATURES)
+"""    
 function stripbreathing(s)   
     for k in keys(breathingstripdict)
         #if s[1] in keys(breathingstripdict)
