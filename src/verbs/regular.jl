@@ -45,15 +45,19 @@ end
 """True if label for `m` is a stop verb pattern.
 """
 function stopverb(m::MorphData)
-    s = m.label
-    cpindexes = collect(eachindex(s))
-    if length(cpindexes)  > 2
-        start = cpindexes[end-1]
-        endswith(s,"ω") && 
-        isempty(m.gen) &&
-        string(s[start]) in  STOPS
-    else
+    if skwverb(m)
         false
+    else
+        s = m.label
+        cpindexes = collect(eachindex(s))
+        if length(cpindexes)  > 2
+            start = cpindexes[end-1]
+            endswith(s,"ω") && 
+            isempty(m.gen) &&
+            string(s[start]) in  STOPS
+        else
+            false
+        end
     end
 end
 
@@ -96,6 +100,14 @@ end
 """
 function ocontractverb(m::MorphData)
     endswith(m.label, PG.nfkc("όω"))
+end
+
+
+
+"""True if label for `m` is a regular verb pattern in -έω.
+"""
+function skwverb(m::MorphData)
+    endswith(m.label, PG.nfkc("σκω"))
 end
 
 
@@ -143,6 +155,7 @@ function irregomega(m::MorphData)
     ! stopverb(m) &&
     ! contractverb(m)  &&
     ! izwverb(m) &&
-    ! sigmaverb(m)
+    ! sigmaverb(m) &&
+    ! skwverb(m) 
 
 end

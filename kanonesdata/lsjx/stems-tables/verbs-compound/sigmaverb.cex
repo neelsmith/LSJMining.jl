@@ -7,6 +7,7 @@ compounds.n6279|lsjx.n6279|ἀνα|lsjx.n20803|ἀναβράζω
 compounds.n6282|lsjx.n6282|ἀνα|lsjx.n20820|ἀναβράσσω
 compounds.n6290|lsjx.n6290|ἀνα|lsjx.n21087|ἀναβρυάζω
 compounds.n6388|lsjx.n6388|ἀνα|lsjx.n22882|ἀναγρύζω
+compounds.n6450|lsjx.n6450|ἀνα|lsjx.n26857|ἀναδικάζω
 compounds.n6457|lsjx.n6457|ἀνα|lsjx.n27353|ἀναδιπλασιάζω
 compounds.n6530|lsjx.n6530|ἀνα|lsjx.n47917|ἀναθαυμάζω
 compounds.n6547|lsjx.n6547|ἀνα|lsjx.n48629|ἀναθηλάζω
@@ -90,6 +91,7 @@ compounds.n12268|lsjx.n12268|ἀπο|lsjx.n19892|ἀποβιβάζω
 compounds.n12290|lsjx.n12290|ἀπο|lsjx.n20169|ἀποβλύζω
 compounds.n12372|lsjx.n12372|ἀπο|lsjx.n22731|ἀπογραΐζω
 compounds.n12379|lsjx.n12379|ἀπο|lsjx.n22958|ἀπογυμνάζω
+compounds.n12488|lsjx.n12488|ἀπο|lsjx.n26857|ἀποδικάζω
 compounds.n12512|lsjx.n12512|ἀπο|lsjx.n27858|ἀποδοκιμάζω
 compounds.n12542|lsjx.n12542|ἀπο|lsjx.n28335|ἀποδρασκάζω
 compounds.n12594|lsjx.n12594|ἀπο|lsjx.n47917|ἀποθαυμάζω
@@ -145,6 +147,7 @@ compounds.n24563|lsjx.n24563|δια|lsjx.n20169|διαβλύζω
 compounds.n24625|lsjx.n24625|δια|lsjx.n22277|διαγλαύσσω
 compounds.n24645|lsjx.n24645|δια|lsjx.n22558|διαγογγύζω
 compounds.n24663|lsjx.n24663|δια|lsjx.n22958|διαγυμνάζω
+compounds.n24707|lsjx.n24707|δια|lsjx.n26857|διαδικάζω
 compounds.n24718|lsjx.n24718|δια|lsjx.n27858|διαδοκιμάζω
 compounds.n24721|lsjx.n24721|δια|lsjx.n28003|διαδοξάζω
 compounds.n24899|lsjx.n24899|δια|lsjx.n53050|διακανάσσω
@@ -230,6 +233,7 @@ compounds.n31748|lsjx.n31748|ἐκ|lsjx.n20169|ἐκβλύζω
 compounds.n31772|lsjx.n31772|ἐκ|lsjx.n20803|ἐκβράζω
 compounds.n31776|lsjx.n31776|ἐκ|lsjx.n20820|ἐκβράσσω
 compounds.n31813|lsjx.n31813|ἐκ|lsjx.n22958|ἐκγυμνάζω
+compounds.n31880|lsjx.n31880|ἐκ|lsjx.n26857|ἐκδικάζω
 compounds.n31897|lsjx.n31897|ἐκ|lsjx.n27289|ἐκδιορύσσω
 compounds.n31905|lsjx.n31905|ἐκ|lsjx.n27858|ἐκδοκιμάζω
 compounds.n31925|lsjx.n31925|ἐκ|lsjx.n28335|ἐκδρασκάζω
@@ -449,6 +453,7 @@ compounds.n53811|lsjx.n53811|κατα|lsjx.n22558|καταγογγύζω
 compounds.n53830|lsjx.n53830|κατα|lsjx.n22958|καταγυμνάζω
 compounds.n53858|lsjx.n53858|κατα|lsjx.n23350|καταδαμάζω
 compounds.n53907|lsjx.n53907|κατα|lsjx.n25160|καταδιαλλάσσω
+compounds.n53915|lsjx.n53915|κατα|lsjx.n26857|καταδικάζω
 compounds.n53928|lsjx.n53928|κατα|lsjx.n28003|καταδοξάζω
 compounds.n53948|lsjx.n53948|κατα|lsjx.n28520|καταδρυφάσσω
 compounds.n54084|lsjx.n54084|κατα|lsjx.n51615|κατακαγχάζω
@@ -623,6 +628,7 @@ compounds.n86992|lsjx.n86992|προ|lsjx.n25160|προδιαλλάσσω
 compounds.n87004|lsjx.n87004|προδια|lsjx.n83495|προδιαπλάσσω
 compounds.n87011|lsjx.n87011|προ|lsjx.n25718|προδιαρπάζω
 compounds.n87041|lsjx.n87041|προ|lsjx.n26629|προδιεορτάζω
+compounds.n87052|lsjx.n87052|προ|lsjx.n26857|προδικάζω
 compounds.n87072|lsjx.n87072|προ|lsjx.n27842|προδοκάζω
 compounds.n87075|lsjx.n87075|προ|lsjx.n27858|προδοκιμάζω
 compounds.n87083|lsjx.n87083|προ|lsjx.n28003|προδοξάζω
@@ -679,6 +685,7 @@ compounds.n88882|lsjx.n88882|προσδια|lsjx.n86219|προσδιαπράσσ
 compounds.n88885|lsjx.n88885|προσ|lsjx.n25718|προσδιαρπάζω
 compounds.n88893|lsjx.n88893|προσδια|lsjx.n102432|προσδιαταράσσω
 compounds.n88894|lsjx.n88894|προσδια|lsjx.n102515|προσδιατάσσω
+compounds.n88910|lsjx.n88910|προσ|lsjx.n26857|προσδικάζω
 compounds.n88924|lsjx.n88924|προσ|lsjx.n28003|προσδοξάζω
 compounds.n89185|lsjx.n89185|προσεπι|lsjx.n28003|προσεπιδοξάζω
 compounds.n89202|lsjx.n89202|προσεπι|lsjx.n57264|προσεπικηρύσσω
@@ -808,6 +815,7 @@ compounds.n99727|lsjx.n99727|συν|lsjx.n26008|συνδιασῴζω
 compounds.n99729|lsjx.n99729|συνδια|lsjx.n102432|συνδιαταράσσω
 compounds.n99746|lsjx.n99746|συνδια|lsjx.n112559|συνδιαφυλάσσω
 compounds.n99747|lsjx.n99747|συνδια|lsjx.n113530|συνδιαχειμάζω
+compounds.n99765|lsjx.n99765|συν|lsjx.n26857|συνδικάζω
 compounds.n99784|lsjx.n99784|συν|lsjx.n27858|συνδοκιμάζω
 compounds.n99787|lsjx.n99787|συν|lsjx.n28003|συνδοξάζω
 compounds.n99801|lsjx.n99801|συν|lsjx.n28544|συνδυάζω
@@ -860,6 +868,7 @@ compounds.n107108|lsjx.n107108|ὑπεκ|lsjx.n112217|ὑπεκφράζω
 compounds.n107331|lsjx.n107331|ὑπερ|lsjx.n19892|ὑπερβιβάζω
 compounds.n107344|lsjx.n107344|ὑπερ|lsjx.n20169|ὑπερβλύζω
 compounds.n107356|lsjx.n107356|ὑπερ|lsjx.n20803|ὑπερβράζω
+compounds.n107399|lsjx.n107399|ὑπερ|lsjx.n26857|ὑπερδικάζω
 compounds.n107552|lsjx.n107552|ὑπερ|lsjx.n47917|ὑπερθαυμάζω
 compounds.n107608|lsjx.n107608|ὑπερ|lsjx.n51615|ὑπερκαγχάζω
 compounds.n107631|lsjx.n107631|ὑπερ|lsjx.n56298|ὑπερκαχλάζω

@@ -8,6 +8,7 @@ regularverbtypes = [
     "ocontract" ,
     "izwverb" , 
     "sigmaverb" , 
+    "skwverb",
     "numiverb"
 ]
 
@@ -23,6 +24,7 @@ verbfilters = Dict(
     "ocontract" => ocontractverb,
     "izwverb" => izwverb, 
     "sigmaverb" => sigmaverb, 
+    "skwverb" => skwverb,
     "numiverb" => numiverb
     #irregmiverb, irregomega
 )
@@ -39,6 +41,7 @@ infltypemap = Dict(
     "ocontract" => "aw_contract",
     "izwverb" => "izw", 
     "sigmaverb" => "w_pp1", 
+    "skwverb" => "skw",
     "numiverb" => "numi"
 )
 
@@ -58,6 +61,8 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"ίζω$" => "") |> rmaccents
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
+    elseif verbtype == "skwverb"
+        replace(s, r"σκω$" => "") |> rmaccents
     else
 
     end
