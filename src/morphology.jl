@@ -6,7 +6,7 @@ lexemes in local clone of Kanones in `kroot`.
 $(SIGNATURES)
 """
 function kanones(src, target, kroot)
-    v = loadmorphdata(src, kroot)
+    v = loadmorphdata(src)
     lsjx = registrycolumns(kroot)
 
     verbs(v, lsjx, target)

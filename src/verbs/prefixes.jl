@@ -1,5 +1,8 @@
 prefixdict = Dict(
 PG.nfkc("ἀμ") => PG.nfkc("ἀμ"),
+PG.nfkc("ἀμφ") => PG.nfkc("ἀμφ"),
+PG.nfkc("ἀμφι") => PG.nfkc("ἀμφι"),
+
 PG.nfkc("ἀν") => PG.nfkc("ἀν"),
 PG.nfkc("ἀνα") => PG.nfkc("ἀνα"),
 PG.nfkc("ἀνεπ") => PG.nfkc("ἀν#επ"),
@@ -31,6 +34,7 @@ PG.nfkc("ἀφ") => PG.nfkc("ἀφ"),
 
 PG.nfkc("δι") => PG.nfkc("δι"),
 PG.nfkc("δια") => PG.nfkc("δια"),
+PG.nfkc("διαπο") => PG.nfkc("δια#   απο"),
 PG.nfkc("διεν") => PG.nfkc("δι#εν"),
 PG.nfkc("διεμ") => PG.nfkc("δι#εμ"),
 
@@ -66,6 +70,7 @@ PG.nfkc("μετεν") => PG.nfkc("μετ#εν"),
 
 PG.nfkc("παρ") => PG.nfkc("παρ"),
 PG.nfkc("παρα") => PG.nfkc("παρα"),
+PG.nfkc("παρανα") => PG.nfkc("παρ#ανα"),
 PG.nfkc("παρεισ") => PG.nfkc("παρ#εισ"),
 PG.nfkc("παρεκ") => PG.nfkc("παρ#εκ"),
 PG.nfkc("παρεν") => PG.nfkc("παρ#εν"),
@@ -86,6 +91,7 @@ PG.nfkc("προεν") => PG.nfkc("προ#εν"),
 PG.nfkc("προεμ") => PG.nfkc("προ#εμ"),
 PG.nfkc("προεπι") => PG.nfkc("προ#επι"),
 PG.nfkc("προκατα") => PG.nfkc("προ#κατα"),
+PG.nfkc("προκατανα") => PG.nfkc("προ#κατ#ανα"),
 PG.nfkc("προϋπο") => PG.nfkc("προ#ϋπο"),
 
 PG.nfkc("προσ") => PG.nfkc("προσ"),
@@ -138,3 +144,4 @@ PG.nfkc("ὑποδια") => PG.nfkc("ὑπο#δια"),
 PG.nfkc("ὑποκατα") => PG.nfkc("ὑπο#κατα)"),
 PG.nfkc("ὑφ") => PG.nfkc("ὑφ")
 )
+

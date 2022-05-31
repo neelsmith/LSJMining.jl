@@ -8,6 +8,7 @@ regularverbtypes = [
     "ocontract" ,
     "izwverb" , 
     "sigmaverb" , 
+    "skwverb",
     "numiverb"
 ]
 
@@ -23,6 +24,7 @@ verbfilters = Dict(
     "ocontract" => ocontractverb,
     "izwverb" => izwverb, 
     "sigmaverb" => sigmaverb, 
+    "skwverb" => skwverb,
     "numiverb" => numiverb
     #irregmiverb, irregomega
 )
@@ -39,6 +41,7 @@ infltypemap = Dict(
     "ocontract" => "aw_contract",
     "izwverb" => "izw", 
     "sigmaverb" => "w_pp1", 
+    "skwverb" => "skw",
     "numiverb" => "numi"
 )
 
@@ -58,6 +61,8 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"ίζω$" => "") |> rmaccents
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
+    elseif verbtype == "skwverb"
+        replace(s, r"σκω$" => "") |> rmaccents
     else
 
     end
@@ -70,7 +75,7 @@ end
 """
 function lookup(s::AbstractString, v::Vector{MorphData})
     matches = filter(m -> m.label == s, v)
-    @debug("Filtered $(s)")
+    @debug("Lookup filtered $(s)")
     if isempty(matches)
         @warn("No match for label $(s)")
         nothing
@@ -112,15 +117,21 @@ function writecompoundverbs(
     end
 end
 
+
+
 function verbsfortype(v::Vector{MorphData}, 
-    vtype::AbstractString)
+    vtype::AbstractString, ortho = literaryGreek())
     f = verbfilters[vtype]
     mdata = filter(d -> f(d), v)
     @info("""Regular verb type "$(f)": $(length(mdata)) verbs to analyze""")
 
-    stripped = map(m -> lowercase(m.label) |> stripbreathing,  mdata)
     lemmastrings = map(d -> d.label, mdata)
-    splits = map(s -> splitmorphemes(s, stripped, withfailure = true), lemmastrings) 
+    breathingdict = Dict()
+    for s in lemmastrings
+        stripped = rmbreathing(s,ortho)
+        breathingdict[stripped] = s
+    end
+    splits = map(s -> splitmorphemes(s, breathingdict,  withfailure = true), lemmastrings) 
 
     simplex = filter(pr -> ! contains(pr[1],"#") &&  isempty(pr[2]), splits )
     compounds = filter(pr -> contains(pr[1],"#"), splits )
@@ -131,6 +142,8 @@ function verbsfortype(v::Vector{MorphData},
         if i % 100 == 0
             @info("$(i)…")
         end
+        @debug("SIMPLEX: ", pr[1])
+        @debug("In breathing dict?: ", pr[1] in values(breathingdict))
 
         verb = lookup(pr[1], mdata)
         if ! isnothing(verb)
@@ -156,8 +169,10 @@ function verbsfortype(v::Vector{MorphData},
         compstring = pr[1]
         pieces = split(compstring,"#")
         restored = replace(compstring, "#" => "")
+        @debug("Restored: ", restored)
         verb = lookup(restored, mdata)
-        rootverb = lookup(pieces[2], mdata)
+        rootverb = lookup(breathingdict[pieces[2]], mdata)
+        @debug("Tried looking up rootverb/verb", rootverb, verb)
         if ! isnothing(verb) && ! isnothing(rootverb)
             columns = 
             [ "compounds.$(verb.id)",
@@ -182,7 +197,7 @@ function verbsfortype(v::Vector{MorphData},
     @info("----- ----")
     @info("$(length(simplexlines)) simplex verbs")
     @info("$(length(compoundlines)) compound verbs")
-    @info*("\n")
+    @info("\n")
     (simplexlines, compoundlines)
 end
 
