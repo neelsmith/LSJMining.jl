@@ -31,6 +31,7 @@ PG.nfkc("ἀφ") => PG.nfkc("ἀφ"),
 
 PG.nfkc("δι") => PG.nfkc("δι"),
 PG.nfkc("δια") => PG.nfkc("δια"),
+PG.nfkc("διαπο") => PG.nfkc("δια#   απο"),
 PG.nfkc("διεν") => PG.nfkc("δι#εν"),
 PG.nfkc("διεμ") => PG.nfkc("δι#εμ"),
 
