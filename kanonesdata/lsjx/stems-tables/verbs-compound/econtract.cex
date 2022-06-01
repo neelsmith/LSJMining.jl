@@ -69,9 +69,7 @@ compounds.n8086|lsjx.n8086|ἀν|lsjx.n30888|ἀνειδωλοποιέω
 compounds.n8096|lsjx.n8096|ἀν|lsjx.n31055|ἀνειλέω
 compounds.n8222|lsjx.n8222|ἀν|lsjx.n34111|ἀνεμέω
 compounds.n8557|lsjx.n8557|ἀν|lsjx.n45402|ἀνευφημέω
-compounds.n8586|lsjx.n8586|ἀν|lsjx.n106772|ἀνέω
 compounds.n8686|lsjx.n8686|ἀν|lsjx.n47673|ἀνηχέω
-compounds.n8741|lsjx.n8741|ἀνθ|lsjx.n106772|ἀνθέω
 compounds.n8798|lsjx.n8798|ἀνθ|lsjx.n73496|ἀνθομιλέω
 compounds.n8815|lsjx.n8815|ἀνθ|lsjx.n75155|ἀνθορμέω
 compounds.n8924|lsjx.n8924|ἀνθ|lsjx.n106588|ἀνθυλακτέω
@@ -224,7 +222,6 @@ compounds.n11658|lsjx.n11658|ἀπ|lsjx.n17822|ἀπαυτομολέω
 compounds.n11684|lsjx.n11684|ἀπ|lsjx.n30860|ἀπειδοποιέω
 compounds.n11782|lsjx.n11782|ἀπ|lsjx.n31886|ἀπεκδικέω
 compounds.n11801|lsjx.n11801|ἀπ|lsjx.n33194|ἀπεκφορέω
-compounds.n11841|lsjx.n11841|ἀπεμ|lsjx.n106772|ἀπεμέω
 compounds.n11867|lsjx.n11867|ἀπ|lsjx.n36571|ἀπεξαιρέω
 compounds.n11873|lsjx.n11873|ἀπ|lsjx.n37727|ἀπεξωθέω
 compounds.n11973|lsjx.n11973|ἀπ|lsjx.n42835|ἀπερωέω
@@ -579,7 +576,6 @@ compounds.n33975|lsjx.n33975|ἐμ|lsjx.n19612|ἐμβατέω
 compounds.n34031|lsjx.n34031|ἐμ|lsjx.n20303|ἐμβομβέω
 compounds.n34033|lsjx.n34033|ἐμ|lsjx.n20443|ἐμβοτέω
 compounds.n34034|lsjx.n34034|ἐμ|lsjx.n20549|ἐμβουκολέω
-compounds.n34111|lsjx.n34111|ἐμ|lsjx.n106772|ἐμέω
 compounds.n34157|lsjx.n34157|ἐμ|lsjx.n67225|ἐμμετρέω
 compounds.n34173|lsjx.n34173|ἐμ|lsjx.n68239|ἐμμογέω
 compounds.n34187|lsjx.n34187|ἐμ|lsjx.n68999|ἐμμυέω
@@ -1397,7 +1393,6 @@ compounds.n87229|lsjx.n87229|προεκ|lsjx.n111895|προεκφοβέω
 compounds.n87233|lsjx.n87233|προεκ|lsjx.n112832|προεκφωνέω
 compounds.n87234|lsjx.n87234|προεκ|lsjx.n113864|προεκχέω
 compounds.n87235|lsjx.n87235|προεκ|lsjx.n115201|προεκχωρέω
-compounds.n87256|lsjx.n87256|προεμ|lsjx.n106772|προεμέω
 compounds.n87261|lsjx.n87261|προεμ|lsjx.n84068|προεμπνέω
 compounds.n87290|lsjx.n87290|προεν|lsjx.n70910|προεννοέω
 compounds.n87292|lsjx.n87292|προεν|lsjx.n72273|προενοικέω
@@ -1714,7 +1709,6 @@ compounds.n98055|lsjx.n98055|συ|lsjx.n46204|συζέω
 compounds.n98057|lsjx.n98057|συ|lsjx.n46249|συζητέω
 compounds.n98062|lsjx.n98062|συ|lsjx.n46303|συζυγέω
 compounds.n98073|lsjx.n98073|συ|lsjx.n46493|συζωοποιέω
-compounds.n98155|lsjx.n98155|συλ|lsjx.n106772|συλέω
 compounds.n98169|lsjx.n98169|συλ|lsjx.n61771|συλλαλέω
 compounds.n98184|lsjx.n98184|συλ|lsjx.n62260|συλλειοτριβέω
 compounds.n98186|lsjx.n98186|συλ|lsjx.n62287|συλλειτουργέω
@@ -1881,7 +1875,6 @@ compounds.n99995|lsjx.n99995|συνεκ|lsjx.n102995|συνεκτελέω
 compounds.n100022|lsjx.n100022|συνεκ|lsjx.n112102|συνεκφορέω
 compounds.n100025|lsjx.n100025|συνεκ|lsjx.n112832|συνεκφωνέω
 compounds.n100028|lsjx.n100028|συνεκ|lsjx.n113864|συνεκχέω
-compounds.n100049|lsjx.n100049|συνεμ|lsjx.n106772|συνεμέω
 compounds.n100054|lsjx.n100054|συνεμ|lsjx.n84068|συνεμπνέω
 compounds.n100080|lsjx.n100080|συνεν|lsjx.n70910|συνεννοέω
 compounds.n100082|lsjx.n100082|συνεν|lsjx.n76238|συνενοχλέω
@@ -2061,7 +2054,6 @@ compounds.n107498|lsjx.n107498|ὑπερ|lsjx.n43588|ὑπερευδαιμονέ
 compounds.n107501|lsjx.n107501|ὑπερ|lsjx.n43689|ὑπερευδοκιμέω
 compounds.n107505|lsjx.n107505|ὑπερ|lsjx.n44154|ὑπερευκαιρέω
 compounds.n107514|lsjx.n107514|ὑπερ|lsjx.n45471|ὑπερευχαριστέω
-compounds.n107522|lsjx.n107522|ὑπερ|lsjx.n106772|ὑπερέω
 compounds.n107525|lsjx.n107525|ὑπερ|lsjx.n46204|ὑπερζέω
 compounds.n107548|lsjx.n107548|ὑπερ|lsjx.n47673|ὑπερηχέω
 compounds.n107551|lsjx.n107551|ὑπερ|lsjx.n47897|ὑπερθαρσέω
