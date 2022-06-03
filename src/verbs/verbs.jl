@@ -32,13 +32,13 @@ verbfilters = Dict(
 
 "Mapping of LSJ verb pattern to Kanones inflectional class."
 infltypemap = Dict(
-    "stopverb" => "w_regular",
+    "stopverb" => "TBA",
    
     "vowelverb" => "w_regular", 
     "liquidverb" => "w_pp1", 
     "econtract" => "ew_contract",
     "acontract" => "aw_contract",
-    "ocontract" => "aw_contract",
+    "ocontract" => "ow_contract",
     "izwverb" => "izw", 
     "sigmaverb" => "w_pp1", 
     "skwverb" => "skw",
@@ -55,9 +55,9 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"έω$" => "") |> rmaccents
     elseif verbtype == "acontract"
         replace(s, r"άω$" => "") |> rmaccents
-    elseif verbtype == "oontract"
+    elseif verbtype == "ocontract"
         replace(s, r"όω$" => "") |> rmaccents
-    elseif verbtype == "izw"
+    elseif verbtype == "izwverb"
         replace(s, r"ίζω$" => "") |> rmaccents
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
@@ -118,7 +118,9 @@ function writecompoundverbs(
 end
 
 
-
+"""Compose Kanones data lines for both simplex and compound verbs of type `vtype` .
+$(SIGNATURES)
+"""
 function verbsfortype(v::Vector{MorphData}, 
     vtype::AbstractString, ortho = literaryGreek())
     f = verbfilters[vtype]
