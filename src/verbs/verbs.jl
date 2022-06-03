@@ -58,7 +58,7 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
     elseif verbtype == "ocontract"
         replace(s, r"όω$" => "") |> rmaccents
     elseif verbtype == "izwverb"
-        replace(s, r"ίζω$" => "") |> rmaccents
+        replace(s, r"ίζω$" => "ι") |> rmaccents
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
     elseif verbtype == "skwverb"
