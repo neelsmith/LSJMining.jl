@@ -118,7 +118,9 @@ function writecompoundverbs(
 end
 
 
-
+"""Compose Kanones data lines for both simplex and compound verbs of type `vtype` .
+$(SIGNATURES)
+"""
 function verbsfortype(v::Vector{MorphData}, 
     vtype::AbstractString, ortho = literaryGreek())
     f = verbfilters[vtype]
