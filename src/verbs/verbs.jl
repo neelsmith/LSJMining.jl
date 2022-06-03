@@ -57,7 +57,7 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"άω$" => "") |> rmaccents
     elseif verbtype == "oontract"
         replace(s, r"όω$" => "") |> rmaccents
-    elseif verbtype == "izw"
+    elseif verbtype == "izwverb"
         replace(s, r"ίζω$" => "") |> rmaccents
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
