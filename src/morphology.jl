@@ -5,7 +5,7 @@ Records will be filtered by Kanones' collection of
 lexemes in local clone of Kanones in `kroot`.
 $(SIGNATURES)
 """
-function kanones(src, target, kroot)
+function kanones(src::AbstractString, target, kroot)
     v = loadmorphdata(src)
     lsjx = registrycolumns(kroot)
 
@@ -13,4 +13,11 @@ function kanones(src, target, kroot)
     # Rework these to filter on registry:
     #nouns(v, lsjx, target)
     #adjectives(v, lsjx, target)
+end
+
+
+function kanones(mdata::Vector{MorphData}, target, kroot)
+    lsjx = registrycolumns(kroot)
+    @info("Write verb stems")
+    verbs(mdata, lsjx, target)
 end

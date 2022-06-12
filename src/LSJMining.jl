@@ -21,8 +21,10 @@ include("adjs/adjectives.jl")
 include("verbs/regular.jl")
 include("verbs/prefixes.jl")
 include("verbs/morphemes.jl")
+include("verbs/deponents.jl")
 include("verbs/verbs.jl")
 include("verbs/irregularcompounds.jl")
+
 
 include("morphology.jl")
 
