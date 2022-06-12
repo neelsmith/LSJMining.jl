@@ -13,6 +13,18 @@ regularverbtypes = [
 ]
 
 
+deponentverbtypes = [
+    "stopverbdep",
+    "vowelverbdep" , 
+    "econtractdep" ,
+    "acontractdep",
+    "ocontractdep" ,
+    "izwverbdep" , 
+    "sigmaverbdep" , 
+    "skwverbdep",
+    "numiverbdep"
+]
+
 "Boolean filtering function to use for each LSJ verb pattern."
 verbfilters = Dict(
     "stopverb" => stopverb,
@@ -25,10 +37,18 @@ verbfilters = Dict(
     "izwverb" => izwverb, 
     "sigmaverb" => sigmaverb, 
     "skwverb" => skwverb,
-    "numiverb" => numiverb
-    #irregmiverb, irregomega
+    "numiverb" => numiverb,
+    # deponents
+    "stopverbdep" => stopverbdep,
+    "vowelverbdep" => vowelverbdep,
+    "econtractdep" => econtractdep,
+    "acontractdep" => acontractdep,
+    "ocontractdep" => ocontractdep,
+    "izwverbdep" => izwverbdep,
+    "sigmaverbdep" => sigmaverbdep,
+    "skwverbdep" => skwverbdep,
+    "numiverbdep" => numiverbdep
 )
-
 
 "Mapping of LSJ verb pattern to Kanones inflectional class."
 infltypemap = Dict(
@@ -42,7 +62,22 @@ infltypemap = Dict(
     "izwverb" => "izw", 
     "sigmaverb" => "w_pp1", 
     "skwverb" => "skw",
-    "numiverb" => "numi"
+    "numiverb" => "numi",
+
+
+
+
+    "stopverbdep" => "w_pp1_dep",
+   
+    "vowelverbdep" => "w_regular_dep", 
+    "liquidverbdep" => "w_pp1_dep", 
+    "econtractdep" => "ew_contract_dep",
+    "acontractdep" => "aw_contract_dep",
+    "ocontractdep" => "ow_contract_dep",
+    "izwverbdep" => "izw_dep", 
+    "sigmaverbdep" => "w_pp1_dep", 
+    "skwverbdep" => "skw_dep",
+    "numiverbdep" => "numi_dep"
 )
 
 """Create Kanones stem from LSJ lemma."""
@@ -63,6 +98,24 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"νυμι$" => "") |> rmaccents
     elseif verbtype == "skwverb"
         replace(s, r"σκω$" => "") |> rmaccents
+
+    elseif (verbtype == "stopverbdep") || (verbtype == "vowelverbdep") || (verbtype == "sigmaverbdep") || (verbtype == "liquidverbdep")
+            replace(s, r"ομαι$" => "") |> rmaccents
+    elseif verbtype == "econtractdep"
+        replace(s, r"έομαι$" => "") |> rmaccents
+    elseif verbtype == "acontractdep"
+        replace(s, r"άομαι$" => "") |> rmaccents
+    elseif verbtype == "ocontractdep"
+        replace(s, r"όομαι$" => "") |> rmaccents
+    elseif verbtype == "izwverbdep"
+        replace(s, r"ίζομαι$" => "ι") |> rmaccents
+    elseif verbtype == "numiverbdep"
+        replace(s, r"νυμαι$" => "") |> rmaccents
+    elseif verbtype == "skwverb"
+        replace(s, r"σκομαι$" => "") |> rmaccents
+
+
+
     else
 
     end
@@ -141,8 +194,8 @@ function verbsfortype(v::Vector{MorphData},
 
     simplexlines = ["Rule|LexicalEntity|Stem|StemClass"]
     for (i, pr) in enumerate(simplex)
-        if i % 100 == 0
-            @info("$(i)…")
+        if i % 1000 == 0
+            @info("Simplex stem $(i)…")
         end
         @debug("SIMPLEX: ", pr[1])
         @debug("In breathing dict?: ", pr[1] in values(breathingdict))
@@ -164,8 +217,8 @@ function verbsfortype(v::Vector{MorphData},
     # compounds.n30252|lsj.n30252|ἐν|lsj.n56496|ἐγκελεύω
 
     for (i, pr) in enumerate(compounds)
-        if i % 100 == 0
-            @info("$(i)…")
+        if i % 1000 == 0
+            @info("Compound stem $(i)…")
         end
 
         compstring = pr[1]
@@ -203,10 +256,8 @@ function verbsfortype(v::Vector{MorphData},
     (simplexlines, compoundlines)
 end
 
-"""Extract all verbs from LSJ and format delimited-text representation for Kanones.
-$(SIGNATURES)
-"""
-function verbs(v::Vector{MorphData}, 
+
+function fullregularverbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
 
     for vtype in regularverbtypes
@@ -226,5 +277,41 @@ function verbs(v::Vector{MorphData},
             registeredcompounds, vtype, target
             )
     end
+end
+
+
+
+function regulardeponentverbs(v::Vector{MorphData}, 
+    registry, target::AbstractString)
+
+    for vtype in deponentverbtypes
+        @info("Processing verbs of type $(vtype)")
+        (simplexresults, compoundresults) = verbsfortype(v, vtype)
+        @info("Got $(length(simplexresults)) simplex verbs")
+        registeredsimplex = filter(simplexresults) do ln
+            cols = split(ln, "|")
+            "|$(cols[2])|" in registry
+        end
+        writesimplexverbs(registeredsimplex, vtype, target)
+
+        registeredcompounds = filter(compoundresults) do ln
+            cols = split(ln, "|")
+            "|$(cols[2])|" in registry
+        end
+        writecompoundverbs(
+            registeredcompounds, vtype, target
+            )
+    end
+end
+
+
+"""Extract all verbs from LSJ and format delimited-text representation for Kanones.
+$(SIGNATURES)
+"""
+function verbs(v::Vector{MorphData}, 
+    registry, target::AbstractString)
+
+    fullregularverbs(v,registry,target)
+    regulardeponentverbs(v,registry,target)
     
 end
