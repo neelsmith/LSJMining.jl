@@ -3,7 +3,6 @@
 Build tables for Kanones dataset:
 
 ```@docs
-decl2
 adjs1_2
 verbs
 ```
@@ -31,7 +30,5 @@ irregomega
 Utilities for managing files:
 
 ```@docs
-nounstemsdir
-adjstemsdir
 loadmorphdata
 ```

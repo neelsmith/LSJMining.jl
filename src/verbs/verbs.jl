@@ -32,7 +32,7 @@ verbfilters = Dict(
 
 "Mapping of LSJ verb pattern to Kanones inflectional class."
 infltypemap = Dict(
-    "stopverb" => "TBA",
+    "stopverb" => "w_pp1",
    
     "vowelverb" => "w_regular", 
     "liquidverb" => "w_pp1", 

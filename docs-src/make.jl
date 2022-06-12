@@ -4,11 +4,11 @@
 #
 # Run this from repository root to serve:
 #
-#   julia -e 'using LiveServer; serve(dir="docs/build")'julia -e 'using LiveServer; serve(dir="docs/build")' 
+#   julia -e 'using LiveServer; serve(dir="docs/build")'
 #
 using Pkg
 Pkg.activate(".")
-Pkg.add("https://github.com/neelsmith/LexiconMining.jl")
+Pkg.add(url="https://github.com/neelsmith/LexiconMining.jl")
 Pkg.instantiate()
 
 using Documenter, DocStringExtensions
