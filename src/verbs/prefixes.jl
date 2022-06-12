@@ -142,6 +142,7 @@ PG.nfkc("ὑπερ") => PG.nfkc("ὑπερ"),
 PG.nfkc("ὑπο") => PG.nfkc("ὑπο"),
 PG.nfkc("ὑποδια") => PG.nfkc("ὑπο#δια"),
 PG.nfkc("ὑποκατα") => PG.nfkc("ὑπο#κατα)"),
+PG.nfkc("ὑποπερι") => PG.nfkc("ὑπο#περι"),
 PG.nfkc("ὑφ") => PG.nfkc("ὑφ")
 )
 

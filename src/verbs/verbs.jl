@@ -98,6 +98,24 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"νυμι$" => "") |> rmaccents
     elseif verbtype == "skwverb"
         replace(s, r"σκω$" => "") |> rmaccents
+
+    elseif (verbtype == "stopverbdep") || (verbtype == "vowelverbdep") || (verbtype == "sigmaverbdep") || (verbtype == "liquidverbdep")
+            replace(s, r"ομαι$" => "") |> rmaccents
+    elseif verbtype == "econtractdep"
+        replace(s, r"έομαι$" => "") |> rmaccents
+    elseif verbtype == "acontractdep"
+        replace(s, r"άομαι$" => "") |> rmaccents
+    elseif verbtype == "ocontractdep"
+        replace(s, r"όομαι$" => "") |> rmaccents
+    elseif verbtype == "izwverbdep"
+        replace(s, r"ίζομαι$" => "ι") |> rmaccents
+    elseif verbtype == "numiverbdep"
+        replace(s, r"νυμαι$" => "") |> rmaccents
+    elseif verbtype == "skwverb"
+        replace(s, r"σκομαι$" => "") |> rmaccents
+
+
+
     else
 
     end
@@ -293,8 +311,7 @@ $(SIGNATURES)
 function verbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
 
-    #fullregularverbs(v,registry,target)
-    @info("Get regular deponents")
+    fullregularverbs(v,registry,target)
     regulardeponentverbs(v,registry,target)
     
 end
