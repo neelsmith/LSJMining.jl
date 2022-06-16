@@ -36,6 +36,7 @@ function splitmorphemes(s,  breathsdict; withfailure = false)
     success = ""
     failure = ""
 
+    @debug("Splitting $(s)")
     disjunction = join(sort(prefixes(), by=length, rev=true), "|")
     re = Regex("^($disjunction)(.+)")
     divided = splitem(s, re)
