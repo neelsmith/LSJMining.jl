@@ -127,7 +127,8 @@ end
 ($SIGNATURES)
 """
 function lookup(s::AbstractString, v::Vector{MorphData})
-    matches = filter(m -> m.label == s, v)
+
+    matches = filter(m -> m.label == nfkc(s), v)
     @debug("Lookup filtered $(s)")
     if isempty(matches)
         @warn("No match for label $(s)")
@@ -154,7 +155,7 @@ function writesimplexverbs(
     verbfile = joinpath(kdataset,"stems-tables", "verbs-simplex", "$(vtype).cex")
     @info("Writing simplex verbs to file")
     open(verbfile,"w") do io
-        write(io, join(verblines, "\n"))
+        write(io, join(verblines, "\n") * "\n")
     end
 end
 
@@ -166,7 +167,7 @@ function writecompoundverbs(
     verbfile = joinpath(kdataset,"stems-tables", "verbs-compound", "$(vtype).cex")
     @info("Writing compound verbs to file $(verbfile)")
     open(verbfile,"w") do io
-        write(io, join(verblines, "\n"))
+        write(io, join(verblines, "\n") * "\n")
     end
 end
 
@@ -311,7 +312,7 @@ $(SIGNATURES)
 function verbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
 
-    fullregularverbs(v,registry,target)
-    regulardeponentverbs(v,registry,target)
+    fullregularverbs(v, registry, target)
+    regulardeponentverbs(v, registry, target)
     
 end
