@@ -12,7 +12,7 @@ regularverbtypes = [
     "numiverb"
 ]
 
-
+"Depnonent verb patterns to quarry from LSJ."
 deponentverbtypes = [
     "stopverbdep",
     "vowelverbdep" , 
@@ -117,7 +117,7 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
 
 
     else
-
+        @warn("Unrecognized verb type:", verbtype)
     end
     
 end
@@ -128,7 +128,7 @@ end
 """
 function lookup(s::AbstractString, v::Vector{MorphData})
 
-    matches = filter(m -> m.label == nfkc(s), v)
+    matches = filter(m -> nfkc(m.label) == nfkc(s), v)
     @debug("Lookup filtered $(s)")
     if isempty(matches)
         @warn("No match for label $(s)")
@@ -144,8 +144,7 @@ function lookup(s::AbstractString, v::Vector{MorphData})
 end
 
 
-"""Extract all verbs from LSJ and write stems to a Kanones
-data set.
+"""Write stems records for simplex verbs in `verblines` to a Kanones data set.
 $(SIGNATURES)
 """
 function writesimplexverbs(
@@ -153,19 +152,21 @@ function writesimplexverbs(
     vtype::AbstractString, 
     kdataset::AbstractString)
     verbfile = joinpath(kdataset,"stems-tables", "verbs-simplex", "$(vtype).cex")
-    @info("Writing simplex verbs to file")
+    @info("Writing simplex verbs to file", verbfile)
     open(verbfile,"w") do io
         write(io, join(verblines, "\n") * "\n")
     end
 end
 
-
+"""Write stems records for compound verbs in `verblines` to a Kanones data set.
+$(SIGNATURES)
+"""
 function writecompoundverbs(
     verblines,   
     vtype::AbstractString, 
     kdataset::AbstractString)
     verbfile = joinpath(kdataset,"stems-tables", "verbs-compound", "$(vtype).cex")
-    @info("Writing compound verbs to file $(verbfile)")
+    @info("Writing compound verbs to file",verbfile)
     open(verbfile,"w") do io
         write(io, join(verblines, "\n") * "\n")
     end
@@ -257,7 +258,9 @@ function verbsfortype(v::Vector{MorphData},
     (simplexlines, compoundlines)
 end
 
-
+"""Extract fully regular verbs from LSJ and format delimited-text representation for Kanones.
+$(SIGNATURES)
+"""
 function fullregularverbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
 
@@ -277,11 +280,14 @@ function fullregularverbs(v::Vector{MorphData},
         writecompoundverbs(
             registeredcompounds, vtype, target
             )
+
     end
 end
 
 
-
+"""Extract fully regular deponent verbs from LSJ and format delimited-text representation for Kanones.
+$(SIGNATURES)
+"""
 function regulardeponentverbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
 
@@ -314,5 +320,6 @@ function verbs(v::Vector{MorphData},
 
     fullregularverbs(v, registry, target)
     regulardeponentverbs(v, registry, target)
+    compoundirregulars(v, registry, target)
     
 end
