@@ -317,9 +317,9 @@ $(SIGNATURES)
 """
 function verbs(v::Vector{MorphData}, 
     registry, target::AbstractString)
-
+    compoundirregulars(v, registry, target)
     fullregularverbs(v, registry, target)
     regulardeponentverbs(v, registry, target)
-    compoundirregulars(v, registry, target)
+    
     
 end
