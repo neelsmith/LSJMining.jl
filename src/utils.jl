@@ -57,7 +57,7 @@ function registry(kroot = joinpath("..", "Kanones.jl"))
     for ln in filter(l -> !isempty(l), data)
         cols = split(ln,"|")
         if length(cols) < 2
-            @warn("Invalid input: too few columns in $(ln)")
+            @warn("Invalid input: too few columns in $(ln) (from $(f))")
         else
             pieces = split(cols[1],".")
             push!(idlist, pieces[2] )
@@ -120,13 +120,13 @@ end
 $(SIGNATURES)
 """
 function accenttype(s::AbstractString)
-    if lg_accentedsyll(s) == :UNACCENTED
+    if PolytonicGreek.lg_accentedsyll(s) == :UNACCENTED
         nothing
-    elseif lg_accentedsyll(s) == :ULTIMA
+    elseif PolytonicGreek.lg_accentedsyll(s) == :ULTIMA
         "inflectionaccented"
-    elseif lg_accentedsyll(s) == :PENULT
+    elseif PolytonicGreek.lg_accentedsyll(s) == :PENULT
         "stemaccented"
-    elseif lg_accentedsyll(s) == :ANTEPENULT
+    elseif PolytonicGreek.lg_accentedsyll(s) == :ANTEPENULT
         "recessive"
     end
 end
