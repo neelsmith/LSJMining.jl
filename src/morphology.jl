@@ -21,6 +21,6 @@ function kanones(mdata::Vector{MorphData}, target, kroot)
     #verbs(mdata, lsjx, target)
 
     # Rework these to filter on registry:
-    nouns(mdata, lsjx, target)
-    #adjectives(mdata, lsjx, target)
+    #nouns(mdata, lsjx, target)
+    adjectives(mdata, lsjx, target)
 end

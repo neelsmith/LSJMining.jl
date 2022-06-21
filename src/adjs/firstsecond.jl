@@ -1,9 +1,9 @@
 
-"""Extract 1st-2nd declension adjectives from `v`
+"""Extract three-ending 1st-2nd declension adjectives from `v`
 and write a stems table to the Kanones dataset in `target`.
 $(SIGNATURES)
 """
-function adjs1_2(v::Vector{MorphData}, target)
+function adjs1_2(v::Vector{MorphData}, registry, target)
     adjstemsdir(target)
 
     adjs = filter(d ->  (d.itype == "ή" || d.itype == "η") && isempty(d.gen),  v)
@@ -26,9 +26,17 @@ function adjs1_2(v::Vector{MorphData}, target)
         ]
         push!(adjlines, join(columns,"|"))
     end
+
+    registeredadjs = filter(adjlines) do ln
+        cols = split(ln, "|")
+        "|$(cols[2])|" in registry
+    end
+
+
+
     adjfile = joinpath(target,"stems-tables", "adjectives", "first-second.cex")
     open(adjfile,"w") do io
-        write(io, join(adjlines, "\n"))
+        write(io, join(registeredadjs, "\n"))
     end
 
 end
