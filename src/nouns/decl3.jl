@@ -35,6 +35,45 @@ function decl3ous(v::Vector{MorphData}, registry, target)
 end
 
 
+
+
+function decl3ma_matos(v::Vector{MorphData}, registry, target)
+    nouns3 = filter(v) do d 
+        stripped = rmaccents(d.label)
+        d.itype == "ατος" && 
+        endswith(stripped,"μα") &&
+        d.gen == nfkc("τό")
+    end
+    @info("Third decl. neuters ma/matos: $(length(nouns3))")
+    nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
+    for (i, noun) in enumerate(nouns3)
+        if i % 100 == 0
+            @info("third-declension nouns ma/matos $(i)…")
+        end
+        columns = 
+        [ "nounstems.$(noun.id)",
+        "lsjx.$(noun.id)",
+        replace(rmaccents(noun.label), r"μα$" =>  ""),
+        "neuter",
+        "ma_matos",
+        accenttype(noun.label)   
+        ]
+        push!(nounlines, join(columns,"|"))
+    end
+
+
+    registerednouns = filter(nounlines) do ln
+        cols = split(ln, "|")
+        "|$(cols[2])|" in registry
+    end
+
+    nounfile = joinpath(target,"stems-tables", "nouns", "decl3ma_matos.cex")
+    open(nounfile,"w") do io
+        write(io, join(registerednouns, "\n")  * "\n")
+    end
+end
+
+
 """Extract second-declension nouns from LSJ data and
 write stems files to Kanones.
 $(SIGNATURES)
