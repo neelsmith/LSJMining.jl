@@ -7,6 +7,8 @@ regularverbtypes = [
     "acontract",
     "ocontract" ,
     "izwverb" , 
+    "azwverb" , 
+    "ttwverb" , 
     "sigmaverb" , 
     "skwverb",
     "numiverb"
@@ -19,7 +21,9 @@ deponentverbtypes = [
     "econtractdep" ,
     "acontractdep",
     "ocontractdep" ,
-    "izwverbdep" , 
+    "izwverbdep" ,
+    "azwverbdep" , 
+    "ttwverbdep" ,
     "sigmaverbdep" , 
     "skwverbdep",
     "numiverbdep"
@@ -35,6 +39,8 @@ verbfilters = Dict(
     "acontract" => acontractverb,
     "ocontract" => ocontractverb,
     "izwverb" => izwverb, 
+    "azwverb" => azwverb, 
+    "ttwverb" => ttwverb, 
     "sigmaverb" => sigmaverb, 
     "skwverb" => skwverb,
     "numiverb" => numiverb,
@@ -45,6 +51,8 @@ verbfilters = Dict(
     "acontractdep" => acontractdep,
     "ocontractdep" => ocontractdep,
     "izwverbdep" => izwverbdep,
+    "azwverbdep" => azwverbdep,
+    "ttwverbdep" => ttwverbdep,
     "sigmaverbdep" => sigmaverbdep,
     "skwverbdep" => skwverbdep,
     "numiverbdep" => numiverbdep
@@ -60,6 +68,8 @@ infltypemap = Dict(
     "acontract" => "aw_contract",
     "ocontract" => "ow_contract",
     "izwverb" => "izw", 
+    "azwverb" => "azw", 
+    "ttwverb" => "ttw", 
     "sigmaverb" => "w_pp1", 
     "skwverb" => "skw",
     "numiverb" => "numi",
@@ -75,6 +85,8 @@ infltypemap = Dict(
     "acontractdep" => "aw_contract_dep",
     "ocontractdep" => "ow_contract_dep",
     "izwverbdep" => "izw_dep", 
+    "azwverbdep" => "azw_dep", 
+    "ttwverbdep" => "ttw_dep", 
     "sigmaverbdep" => "w_pp1_dep", 
     "skwverbdep" => "skw_dep",
     "numiverbdep" => "numi_dep"
@@ -94,6 +106,13 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"όω$" => "") |> rmaccents
     elseif verbtype == "izwverb"
         replace(s, r"ίζω$" => "ι") |> rmaccents
+
+    elseif verbtype == "azwverb"
+        replace(s, r"άζω$" => "α") |> rmaccents
+    elseif verbtype == "ττwverb"
+        replace(s, r"ττω$" => "") |> rmaccents
+
+
     elseif verbtype == "numiverb"
         replace(s, r"νυμι$" => "") |> rmaccents
     elseif verbtype == "skwverb"
@@ -109,6 +128,12 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
         replace(s, r"όομαι$" => "") |> rmaccents
     elseif verbtype == "izwverbdep"
         replace(s, r"ίζομαι$" => "ι") |> rmaccents
+
+    elseif verbtype == "azwverbdep"
+        replace(s, r"άζομαι$" => "α") |> rmaccents
+    elseif verbtype == "ttwverbdep"
+        replace(s, r"ττομαι$" => "") |> rmaccents
+
     elseif verbtype == "numiverbdep"
         replace(s, r"νυμαι$" => "") |> rmaccents
     elseif verbtype == "skwverb"

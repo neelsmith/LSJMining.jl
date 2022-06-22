@@ -18,9 +18,9 @@ $(SIGNATURES)
 function kanones(mdata::Vector{MorphData}, target, kroot)
     lsjx = registrycolumns(kroot)
     #@info("Write verb stems")
-    #verbs(mdata, lsjx, target)
+    verbs(mdata, lsjx, target)
 
     # Rework these to filter on registry:
-    #nouns(mdata, lsjx, target)
+    nouns(mdata, lsjx, target)
     adjectives(mdata, lsjx, target)
 end
