@@ -1,5 +1,6 @@
 
 function nouns(v::Vector{MorphData}, registry, target)
-    # REWORK THIS TO FILTER
+    decl1(v, registry, target)
     decl2(v, registry, target)
+    decl3(v, registry, target)
 end

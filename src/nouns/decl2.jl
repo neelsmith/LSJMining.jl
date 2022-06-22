@@ -37,7 +37,7 @@ function decl2masc(v::Vector{MorphData}, registry, target)
 
     mnounfile = joinpath(target,"stems-tables", "nouns", "decl2m.cex")
     open(mnounfile,"w") do io
-        write(io, join(registerednouns, "\n"))
+        write(io, join(registerednouns, "\n")  * "\n")
     end
 end
 
@@ -75,7 +75,7 @@ function decl2neut(v::Vector{MorphData}, registry, target)
 
     neutnounfile = joinpath(target,"stems-tables", "nouns", "decl2n.cex")
     open(neutnounfile,"w") do io
-        write(io, join(registerednouns, "\n"))
+        write(io, join(registerednouns, "\n")  * "\n")
     end
 end
 

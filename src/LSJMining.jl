@@ -12,7 +12,9 @@ include("utils.jl")
 include("phonology.jl")
 
 
+include("nouns/decl1.jl")
 include("nouns/decl2.jl")
+include("nouns/decl3.jl")
 include("nouns/nouns.jl")
 
 include("adjs/firstsecond.jl")

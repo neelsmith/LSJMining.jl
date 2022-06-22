@@ -36,7 +36,7 @@ function adjs1_2(v::Vector{MorphData}, registry, target)
 
     adjfile = joinpath(target,"stems-tables", "adjectives", "first-second.cex")
     open(adjfile,"w") do io
-        write(io, join(registeredadjs, "\n"))
+        write(io, join(registeredadjs, "\n")  * "\n")
     end
 
 end
