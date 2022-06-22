@@ -47,8 +47,6 @@ compounds.n25506|lsjx.n25506|δια|lsjx.n82728|διαπετάννυμι
 compounds.n25518|lsjx.n25518|δια|lsjx.n82887|διαπήγνυμι
 compounds.n25828|lsjx.n25828|δια|lsjx.n94645|διασκεδάννυμι
 compounds.n25951|lsjx.n25951|δια|lsjx.n97342|διαστρώννυμι
-compounds.n26238|lsjx.n26238|δια|lsjx.n112208|διαφράγνυμι
-compounds.n26625|lsjx.n26625|δι|lsjx.n37477|διεξοίγνυμι
 compounds.n27192|lsjx.n27192|δι|lsjx.n73530|διόμνυμι
 compounds.n30140|lsjx.n30140|ἐγκατα|lsjx.n46176|ἐγκαταζεύγνυμι
 compounds.n30165|lsjx.n30165|ἐγκατα|lsjx.n65689|ἐγκαταμείγνυμι
@@ -57,7 +55,6 @@ compounds.n30188|lsjx.n30188|ἐγκατα|lsjx.n93491|ἐγκατασβέννυ
 compounds.n30212|lsjx.n30212|ἐγκατα|lsjx.n115188|ἐγκαταχώννυμι
 compounds.n30264|lsjx.n30264|ἐγ|lsjx.n56723|ἐγκεράννυμι
 compounds.n30651|lsjx.n30651|ἐγ|lsjx.n115188|ἐγχώννυμι
-compounds.n31400|lsjx.n31400|εἰσ|lsjx.n55029|εἰσκαταρρήγνυμι
 compounds.n31416|lsjx.n31416|εἰσ|lsjx.n59803|εἰσκρεμάννυμι
 compounds.n31462|lsjx.n31462|εἰσ|lsjx.n73804|εἰσομόργνυμι
 compounds.n31831|lsjx.n31831|ἐκ|lsjx.n23658|ἐκδείκνυμι
@@ -90,8 +87,7 @@ compounds.n37536|lsjx.n37536|ἐξ|lsjx.n73530|ἐξόμνυμι
 compounds.n37544|lsjx.n37544|ἐξ|lsjx.n73804|ἐξομόργνυμι
 compounds.n37836|lsjx.n37836|ἐπ|lsjx.n735|ἐπάγνυμι
 compounds.n38014|lsjx.n38014|ἐπ|lsjx.n5815|ἐπαμφιέννυμι
-compounds.n38113|lsjx.n38113|ἐπ|lsjx.n7181|ἐπαναπήγνυμι
-compounds.n38129|lsjx.n38129|ἐπ|lsjx.n7391|ἐπαναρρήγνυμι
+compounds.n38113|lsjx.n38113|ἐπανα|lsjx.n82887|ἐπαναπήγνυμι
 compounds.n39125|lsjx.n39125|ἐπι|lsjx.n23658|ἐπιδείκνυμι
 compounds.n39362|lsjx.n39362|ἐπι|lsjx.n46145|ἐπιζέννυμι
 compounds.n39388|lsjx.n39388|ἐπι|lsjx.n46461|ἐπιζώννυμι
@@ -138,8 +134,8 @@ compounds.n77903|lsjx.n77903|παρα|lsjx.n23658|παραδείκνυμι
 compounds.n77919|lsjx.n77919|παρα|lsjx.n24753|παραδιαζεύγνυμι
 compounds.n77976|lsjx.n77976|παρα|lsjx.n46176|παραζεύγνυμι
 compounds.n77988|lsjx.n77988|παρα|lsjx.n46461|παραζώννυμι
-compounds.n78113|lsjx.n78113|παρα|lsjx.n53968|παρακαταζεύγνυμι
-compounds.n78123|lsjx.n78123|παρα|lsjx.n54794|παρακαταπήγνυμι
+compounds.n78113|lsjx.n78113|παρακατα|lsjx.n46176|παρακαταζεύγνυμι
+compounds.n78123|lsjx.n78123|παρακατα|lsjx.n82887|παρακαταπήγνυμι
 compounds.n78259|lsjx.n78259|παρα|lsjx.n59803|παρακρεμάννυμι
 compounds.n78395|lsjx.n78395|παρα|lsjx.n65689|παραμείγνυμι
 compounds.n78562|lsjx.n78562|παρα|lsjx.n82887|παραπήγνυμι
@@ -215,7 +211,7 @@ compounds.n98365|lsjx.n98365|συμ|lsjx.n65689|συμμείγνυμι
 compounds.n98529|lsjx.n98529|συμπαρα|lsjx.n65689|συμπαραμείγνυμι
 compounds.n98678|lsjx.n98678|συμ|lsjx.n82728|συμπετάννυμι
 compounds.n98684|lsjx.n98684|συμ|lsjx.n82887|συμπήγνυμι
-compounds.n98847|lsjx.n98847|συμ|lsjx.n89736|συμπροσμείγνυμι
+compounds.n98847|lsjx.n98847|συμπροσ|lsjx.n65689|συμπροσμείγνυμι
 compounds.n99026|lsjx.n99026|συν|lsjx.n735|συνάγνυμι
 compounds.n99204|lsjx.n99204|συνανα|lsjx.n23658|συναναδείκνυμι
 compounds.n99209|lsjx.n99209|συνανα|lsjx.n46176|συναναζεύγνυμι

@@ -249,7 +249,7 @@ PG.nfkc("ὑπο") => PG.nfkc("ὑπο"),
 PG.nfkc("ὑποδια") => PG.nfkc("ὑπο#δια"),
 PG.nfkc("ὑποκατα") => PG.nfkc("ὑπο#κατα)"),
 PG.nfkc("ὑποπερι") => PG.nfkc("ὑπο#περι"),
-PG.nfkc("ὑφ") => PG.nfkc("ὑφ")
+PG.nfkc("ὑφ") => PG.nfkc("ὑφ"),
 PG.nfkc("ὑποκαθ") => PG.nfkc("ὑπο#καθ"),
 PG.nfkc("ὑποπρο") => PG.nfkc("ὑπο#προ"),
 )

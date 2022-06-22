@@ -3,7 +3,6 @@ verbstems.n233|lsjx.n233|ἀγαζ|w_pp1
 verbstems.n345|lsjx.n345|ἀγαπαζ|w_pp1
 verbstems.n513|lsjx.n513|ἁγιαζ|w_pp1
 verbstems.n746|lsjx.n746|ἀγνωσσ|w_pp1
-verbstems.n762|lsjx.n762|ἀγοραζ|w_pp1
 verbstems.n960|lsjx.n960|ἀγρωσσ|w_pp1
 verbstems.n985|lsjx.n985|ἀγυρταζ|w_pp1
 verbstems.n996|lsjx.n996|ἀγχαζ|w_pp1
@@ -67,6 +66,7 @@ verbstems.n18996|lsjx.n18996|βαζ|w_pp1
 verbstems.n19184|lsjx.n19184|Βακχιαζ|w_pp1
 verbstems.n19298|lsjx.n19298|βαμβαλυζ|w_pp1
 verbstems.n19594|lsjx.n19594|βασταζ|w_pp1
+verbstems.n19659|lsjx.n19659|βαϋζ|w_pp1
 verbstems.n19816|lsjx.n19816|βεργαϊζ|w_pp1
 verbstems.n19862|lsjx.n19862|βησσ|w_pp1
 verbstems.n19871|lsjx.n19871|βιαζ|w_pp1
@@ -225,6 +225,7 @@ verbstems.n49523|lsjx.n49523|θυρσαζ|w_pp1
 verbstems.n49600|lsjx.n49600|θωαζ|w_pp1
 verbstems.n49634|lsjx.n49634|θωρησσ|w_pp1
 verbstems.n49639|lsjx.n49639|θωταζ|w_pp1
+verbstems.n49642|lsjx.n49642|θωϋσσ|w_pp1
 verbstems.n49664|lsjx.n49664|Ἰακχαζ|w_pp1
 verbstems.n49685|lsjx.n49685|ἰαμβιαζ|w_pp1
 verbstems.n49828|lsjx.n49828|ἰδιαζ|w_pp1
@@ -502,13 +503,6 @@ verbstems.n85640|lsjx.n85640|πομφολυζ|w_pp1
 verbstems.n85714|lsjx.n85714|ποππυζ|w_pp1
 verbstems.n85715|lsjx.n85715|ποππυλιαζ|w_pp1
 verbstems.n85823|lsjx.n85823|πορσ|w_pp1
-verbstems.n86021|lsjx.n86021|ποτικληζ|w_pp1
-verbstems.n86032|lsjx.n86032|ποτιπελαζ|w_pp1
-verbstems.n86035|lsjx.n86035|ποτιπλασσ|w_pp1
-verbstems.n86038|lsjx.n86038|ποτιπτησσ|w_pp1
-verbstems.n86039|lsjx.n86039|ποτιπτυσσ|w_pp1
-verbstems.n86047|lsjx.n86047|ποτισταζ|w_pp1
-verbstems.n86057|lsjx.n86057|ποτιτασσ|w_pp1
 verbstems.n86081|lsjx.n86081|ποτοπταζ|w_pp1
 verbstems.n86194|lsjx.n86194|πρασιαζ|w_pp1
 verbstems.n86219|lsjx.n86219|πρασσ|w_pp1

@@ -12,7 +12,9 @@ include("utils.jl")
 include("phonology.jl")
 
 
+include("nouns/decl1.jl")
 include("nouns/decl2.jl")
+include("nouns/decl3.jl")
 include("nouns/nouns.jl")
 
 include("adjs/firstsecond.jl")
@@ -25,7 +27,7 @@ include("verbs/deponents.jl")
 include("verbs/verbs.jl")
 include("verbs/irregularcompounds.jl")
 
-
+include("profilingutils.jl")
 include("morphology.jl")
 
 export kanones, loadmorphdata
@@ -39,6 +41,7 @@ export vowelverb, liquidverb, stopverb, contractverb, izwverb, sigmaverb, numive
 
 export stripbreathing
 export splitmorphemes
+export profile_endings
 
 end # module
 

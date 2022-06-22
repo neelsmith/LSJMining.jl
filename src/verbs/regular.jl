@@ -78,10 +78,21 @@ end
 
 """True if label for `m` is a regular verb pattern in -ίζω.
 """
+function azwverb(m::MorphData)
+    endswith(m.label, PG.nfkc("άζω"))
+end
+
+"""True if label for `m` is a regular verb pattern in -ίζω.
+"""
+function ttwverb(m::MorphData)
+    endswith(m.label, PG.nfkc("ττω"))
+end
+
+"""True if label for `m` is a regular verb pattern in -ίζω.
+"""
 function izwverb(m::MorphData)
     endswith(m.label, PG.nfkc("ίζω"))
 end
-
 
 """True if label for `m` is a regular verb pattern in -έω.
 """
@@ -155,7 +166,19 @@ function irregomega(m::MorphData)
     ! stopverb(m) &&
     ! contractverb(m)  &&
     ! izwverb(m) &&
+    ! azwverb(m) &&
+    ! ttwverb(m) &&
     ! sigmaverb(m) &&
-    ! skwverb(m) 
+    ! skwverb(m) &&
 
+    ! stopverbdep(m) &&
+    ! vowelverbdep(m) &&
+    ! econtractdep(m) &&
+    ! acontractdep(m) &&
+    ! ocontractdep(m) &&
+    ! izwverbdep(m) &&
+    ! azwverbdep(m) &&
+    ! ttwverbdep(m) &&
+    ! sigmaverbdep(m) &&
+    ! skwverbdep(m)
 end
