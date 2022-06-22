@@ -174,3 +174,13 @@ function invalidortho(cexdir)
     end
     badlist
 end
+
+
+lsjgender = Dict(
+    "ἡ" => "feminine",
+    "ὁ" => "masculine",
+    "τό" => "neuter",
+    "αἱ" => "feminine",
+    "οἱ" => "masculine",
+    nfkc("τά") => "neuter"
+)
