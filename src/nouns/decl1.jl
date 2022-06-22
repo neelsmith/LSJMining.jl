@@ -16,7 +16,7 @@ function decl1eta(v::Vector{MorphData}, registry, target)
         "lsjx.$(noun.id)",
         replace(rmaccents(noun.label), r"η$" =>  ""),
         "feminine",
-        "os_ou",
+        "h_hs",
         accenttype(noun.label)   
         ]
         push!(nounlines, join(columns,"|"))

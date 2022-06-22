@@ -16,7 +16,7 @@ function decl3ous(v::Vector{MorphData}, registry, target)
         "lsjx.$(noun.id)",
         replace(rmaccents(noun.label), r"ος$" =>  ""),
         "neuter",
-        "os_ou",
+        "os_ous",
         accenttype(noun.label)   
         ]
         push!(nounlines, join(columns,"|"))
@@ -28,7 +28,7 @@ function decl3ous(v::Vector{MorphData}, registry, target)
         "|$(cols[2])|" in registry
     end
 
-    nounfile = joinpath(target,"stems-tables", "nouns", "decl2n.cex")
+    nounfile = joinpath(target,"stems-tables", "nouns", "decl3ous.cex")
     open(nounfile,"w") do io
         write(io, join(registerednouns, "\n")  * "\n")
     end
