@@ -164,6 +164,100 @@ function decl3hs_htos(v::Vector{MorphData}, registry, target)
 end
 
 
+function decl3hr_hros(v::Vector{MorphData}, registry, target)
+    nouns3 = filter(v) do d 
+        stripped = rmaccents(d.label)
+        rmaccents(d.itype) == "ηρος" && 
+        endswith(stripped,"ηρ") &&
+        ! isempty(d.gen)
+    end
+    @info("Third decl. hr/hros: $(length(nouns3))")
+    nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
+    for (i, noun) in enumerate(nouns3)
+        if i % 100 == 0
+            @info("third-declension nouns hr/hros $(i)…")
+        end
+
+        if noun.gen in keys(lsjgender)
+            columns = 
+            [ "nounstems.$(noun.id)",
+            "lsjx.$(noun.id)",
+            rmaccents(noun.label),
+            lsjgender[noun.gen],
+            "0_os",
+            accenttype(noun.label)   
+            ]
+            push!(nounlines, join(columns,"|"))
+        else
+            @warn("decl3hr_hros: not a valid gender key |$(noun.gen)| in $(noun)")
+        end
+    end
+
+
+    registerednouns = filter(nounlines) do ln
+        cols = split(ln, "|")
+        "|$(cols[2])|" in registry
+    end
+
+    nounfile = joinpath(target,"stems-tables", "nouns", "decl3hr_hros.cex")
+    open(nounfile,"w") do io
+        write(io, join(registerednouns, "\n")  * "\n")
+    end
+end
+
+
+
+
+function decl3as_ados(v::Vector{MorphData}, registry, target)
+    nouns3 = filter(v) do d 
+        stripped = rmaccents(d.label)
+        rmaccents(d.itype) == "αδος" && 
+        endswith(stripped,"ας") &&
+        ! isempty(d.gen)
+    end
+    @info("Third decl. as/ados: $(length(nouns3))")
+    nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
+    for (i, noun) in enumerate(nouns3)
+        if i % 100 == 0
+            @info("third-declension nouns as/ados $(i)…")
+        end
+        stemval = 
+        if noun.itype == "άδος"
+            stemval = replace(rmaccents(noun.label), r"ς$" =>  "")
+            
+        elseif noun.itype == "ᾶδος"
+            stemval = replace(rmaccents(noun.label), r"ς$" =>  "_")
+        end
+        
+        if noun.gen in keys(lsjgender)
+            columns = 
+            [ "nounstems.$(noun.id)",
+            "lsjx.$(noun.id)",
+            stemval,
+            lsjgender[noun.gen],
+            "as_ados",
+            accenttype(noun.label)   
+            ]
+            push!(nounlines, join(columns,"|"))
+        else
+            @warn("decl3as_ados: not a valid gender key |$(noun.gen)| in $(noun)")
+        end
+    end
+
+
+    registerednouns = filter(nounlines) do ln
+        cols = split(ln, "|")
+        "|$(cols[2])|" in registry
+    end
+
+    nounfile = joinpath(target,"stems-tables", "nouns", "decl3as_ados.cex")
+    open(nounfile,"w") do io
+        write(io, join(registerednouns, "\n")  * "\n")
+    end
+end
+
+
+
 """Extract second-declension nouns from LSJ data and
 write stems files to Kanones.
 $(SIGNATURES)
@@ -176,4 +270,5 @@ function decl3(v::Vector{MorphData}, registry, target)
     decl3ma_matos(v,registry, target)
     decl3is_idos(v,registry, target)
     decl3hs_htos(v,registry, target)
+    decl3hr_hros(v,registry, target)
 end

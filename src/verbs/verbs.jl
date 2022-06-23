@@ -109,7 +109,7 @@ function trimlemma(s::AbstractString, verbtype::AbstractString)
 
     elseif verbtype == "azwverb"
         replace(s, r"άζω$" => "α") |> rmaccents
-    elseif verbtype == "ττwverb"
+    elseif verbtype == "ttwverb"
         replace(s, r"ττω$" => "") |> rmaccents
 
 
@@ -228,6 +228,7 @@ function verbsfortype(v::Vector{MorphData},
         @debug("In breathing dict?: ", pr[1] in values(breathingdict))
 
         verb = lookup(pr[1], mdata)
+        @debug("verbsfortype: looked up ", verb)
         if ! isnothing(verb)
             columns = 
             [ "verbstems.$(verb.id)",
