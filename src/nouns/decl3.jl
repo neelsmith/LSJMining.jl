@@ -271,4 +271,5 @@ function decl3(v::Vector{MorphData}, registry, target)
     decl3is_idos(v,registry, target)
     decl3hs_htos(v,registry, target)
     decl3hr_hros(v,registry, target)
+    decl3as_ados(v,registry, target)
 end
