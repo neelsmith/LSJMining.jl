@@ -1,5 +1,5 @@
 
-function decl3ous(v::Vector{MorphData}, registry, target)
+function decl3ous(v::Vector{MorphData}, registry, target; chunk = 100)
     ousnouns = filter(v) do d 
         stripped = rmaccents(d.label)
         d.itype == "εος" && 
@@ -8,7 +8,7 @@ function decl3ous(v::Vector{MorphData}, registry, target)
     @info("Third decl. nouns os/ous: $(length(ousnouns))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(ousnouns)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns os/ous $(i)…")
         end
         columns = 
@@ -37,7 +37,7 @@ end
 
 
 
-function decl3ma_matos(v::Vector{MorphData}, registry, target)
+function decl3ma_matos(v::Vector{MorphData}, registry, target; chunk = 100)
     nouns3 = filter(v) do d 
         stripped = rmaccents(d.label)
         d.itype == "ατος" && 
@@ -47,7 +47,7 @@ function decl3ma_matos(v::Vector{MorphData}, registry, target)
     @info("Third decl. neuters ma/matos: $(length(nouns3))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(nouns3)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns ma/matos $(i)…")
         end
         columns = 
@@ -77,7 +77,7 @@ end
 
 
 
-function decl3is_idos(v::Vector{MorphData}, registry, target)
+function decl3is_idos(v::Vector{MorphData}, registry, target; chunk = 100)
     nouns3 = filter(v) do d 
         stripped = rmaccents(d.label)
         rmaccents(d.itype) == "ιδος" && 
@@ -87,7 +87,7 @@ function decl3is_idos(v::Vector{MorphData}, registry, target)
     @info("Third decl. is/idos: $(length(nouns3))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(nouns3)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns is/idos $(i)…")
         end
 
@@ -122,7 +122,7 @@ end
 
 
 
-function decl3hs_htos(v::Vector{MorphData}, registry, target)
+function decl3hs_htos(v::Vector{MorphData}, registry, target; chunk = 100)
     nouns3 = filter(v) do d 
         stripped = rmaccents(d.label)
         rmaccents(d.itype) == "ητος" && 
@@ -132,7 +132,7 @@ function decl3hs_htos(v::Vector{MorphData}, registry, target)
     @info("Third decl. hs/htos: $(length(nouns3))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(nouns3)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns hs/htos $(i)…")
         end
 
@@ -164,7 +164,7 @@ function decl3hs_htos(v::Vector{MorphData}, registry, target)
 end
 
 
-function decl3hr_hros(v::Vector{MorphData}, registry, target)
+function decl3hr_hros(v::Vector{MorphData}, registry, target; chunk = 100)
     nouns3 = filter(v) do d 
         stripped = rmaccents(d.label)
         rmaccents(d.itype) == "ηρος" && 
@@ -174,7 +174,7 @@ function decl3hr_hros(v::Vector{MorphData}, registry, target)
     @info("Third decl. hr/hros: $(length(nouns3))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(nouns3)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns hr/hros $(i)…")
         end
 
@@ -208,7 +208,7 @@ end
 
 
 
-function decl3as_ados(v::Vector{MorphData}, registry, target)
+function decl3as_ados(v::Vector{MorphData}, registry, target; chunk = 100)
     nouns3 = filter(v) do d 
         stripped = rmaccents(d.label)
         rmaccents(d.itype) == "αδος" && 
@@ -218,7 +218,7 @@ function decl3as_ados(v::Vector{MorphData}, registry, target)
     @info("Third decl. as/ados: $(length(nouns3))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(nouns3)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("third-declension nouns as/ados $(i)…")
         end
         stemval = 
@@ -262,14 +262,14 @@ end
 write stems files to Kanones.
 $(SIGNATURES)
 """
-function decl3(v::Vector{MorphData}, registry, target)
+function decl3(v::Vector{MorphData}, registry, target; chunk = 100)
     nounstemsdir(target)
     @info("Total morph entries: $(length(v))")
    
-    decl3ous(v,registry, target)
-    decl3ma_matos(v,registry, target)
-    decl3is_idos(v,registry, target)
-    decl3hs_htos(v,registry, target)
-    decl3hr_hros(v,registry, target)
-    decl3as_ados(v,registry, target)
+    decl3ous(v,registry, target; chunk = chunk)
+    decl3ma_matos(v,registry, target; chunk = chunk)
+    decl3is_idos(v,registry, target; chunk = chunk)
+    decl3hs_htos(v,registry, target; chunk = chunk)
+    decl3hr_hros(v,registry, target; chunk = chunk)
+    decl3as_ados(v,registry, target; chunk = chunk)
 end

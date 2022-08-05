@@ -17,6 +17,11 @@ $(SIGNATURES)
 """
 function kanones(mdata::Vector{MorphData}, target, kroot)
     lsjx = registrycolumns(kroot)
+    kanones(mdata, lsjx, target)
+end
+
+function kanones(mdata::Vector{MorphData}, lsjx::Vector{String}, target)
+
     #@info("Write verb stems")
     verbs(mdata, lsjx, target)
 

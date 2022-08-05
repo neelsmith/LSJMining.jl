@@ -1,4 +1,4 @@
-function decl1eta(v::Vector{MorphData}, registry, target)
+function decl1eta(v::Vector{MorphData}, registry, target; chunk = 100)
     etanouns = filter(v) do d 
         stripped = rmaccents(d.label)
         isempty(d.itype) && 
@@ -8,7 +8,7 @@ function decl1eta(v::Vector{MorphData}, registry, target)
     @info("First decl. fem. nouns to format: $(length(etanouns))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(etanouns)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("first-declension feminine noun $(i)…")
         end
         columns = 
@@ -36,7 +36,7 @@ end
 
 
 
-function decl1masc(v::Vector{MorphData}, registry, target)
+function decl1masc(v::Vector{MorphData}, registry, target; chunk = 100)
     firstnouns = filter(v) do d 
         stripped = rmaccents(d.label)
         d.itype == nfkc("ου") && 
@@ -46,7 +46,7 @@ function decl1masc(v::Vector{MorphData}, registry, target)
     @info("First decl. masc. nouns to format: $(length(firstnouns))")
     nounlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(firstnouns)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("first-declension masculine noun $(i)…")
         end
         columns = 
@@ -75,10 +75,10 @@ end
 write stems files to Kanones.
 $(SIGNATURES)
 """
-function decl1(v::Vector{MorphData}, registry, target)
+function decl1(v::Vector{MorphData}, registry, target; chunk = 100)
     nounstemsdir(target)
     @info("Total morph entries: $(length(v))")
-    decl1eta(v,registry, target)
-    decl1masc(v,registry, target)
+    decl1eta(v,registry, target, chunk = chunk)
+    decl1masc(v,registry, target, chunk = chunk)
 
 end
