@@ -53,7 +53,7 @@ function decl3ma_matos(v::Vector{MorphData}, registry, target; chunk = 100)
         columns = 
         [ "nounstems.$(noun.id)",
         "lsjx.$(noun.id)",
-        replace(rmaccents(noun.label), r"μα$" =>  ""),
+        rmaccents(noun.label),
         "neuter",
         "ma_matos",
         accenttype(noun.label)   
