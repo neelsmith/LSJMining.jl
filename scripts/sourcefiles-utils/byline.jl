@@ -1,3 +1,4 @@
+# 
 f = joinpath(pwd(), "cex", "lsj", "alpha.cex")
 
 

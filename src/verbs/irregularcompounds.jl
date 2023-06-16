@@ -41,7 +41,7 @@ function compoundirregulars(morphdata::Vector{MorphData}, registry, target::Abst
             string("lsjx.", stemiddict[basevrb]),
             prefixed
             ]
-            push!(compoundlines, join(columns,"|"))
+            push!(compoundlines, join(columns,"|") * "|")
         end
     end
 

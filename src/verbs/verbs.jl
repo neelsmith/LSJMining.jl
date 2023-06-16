@@ -236,7 +236,7 @@ function verbsfortype(v::Vector{MorphData},
             trimlemma(verb.label, vtype),
             infltypemap[vtype]
             ]
-            push!(simplexlines, join(columns,"|"))
+            push!(simplexlines, join(columns,"|") * "|")
         end
     end
 
@@ -264,7 +264,7 @@ function verbsfortype(v::Vector{MorphData},
             "lsjx.$(rootverb.id)",
             restored
             ]
-            push!(compoundlines, join(columns,"|"))
+            push!(compoundlines, join(columns,"|") * "|")
         end
     end
 
