@@ -3,7 +3,7 @@
 and write a table to a Kanones dataset.
 
 """
-function decl2masc(v::Vector{MorphData}, registry, target)
+function decl2masc(v::Vector{MorphData}, registry, target; chunk = 100)
     mnouns = filter(v) do d 
         stripped = rmaccents(d.label)
         isempty(d.itype) && 
@@ -13,7 +13,7 @@ function decl2masc(v::Vector{MorphData}, registry, target)
     @info("Second decl. masc. nouns to format: $(length(mnouns))")
     mlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(mnouns)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("masc. second-declension noun $(i)…")
         end
         columns = 
@@ -41,7 +41,7 @@ function decl2masc(v::Vector{MorphData}, registry, target)
     end
 end
 
-function decl2neut(v::Vector{MorphData}, registry, target)
+function decl2neut(v::Vector{MorphData}, registry, target; chunk = 100)
     neutnouns = filter(v) do d 
         stripped = rmaccents(d.label)
         isempty(d.itype) && 
@@ -51,7 +51,7 @@ function decl2neut(v::Vector{MorphData}, registry, target)
     @info("Second decl. neut. nouns to format: $(length(neutnouns))")
     neutlines = ["StemUrn|LexicalEntity|Stem|Gender|InflClass|Accent|"]
     for (i, noun) in enumerate(neutnouns)
-        if i % 100 == 0
+        if i % chunk == 0
             @info("second-declension neuter noun $(i)…")
         end
         columns = 
@@ -83,10 +83,10 @@ end
 write stems files to Kanones.
 $(SIGNATURES)
 """
-function decl2(v::Vector{MorphData}, registry, target)
+function decl2(v::Vector{MorphData}, registry, target; chunk = 100)
     nounstemsdir(target)
     @info("Total morph entries: $(length(v))")
-    decl2masc(v,registry, target)
-    decl2neut(v,registry, target)
+    decl2masc(v,registry, target; chunk = chunk)
+    decl2neut(v,registry, target; chunk = chunk)
 end
 

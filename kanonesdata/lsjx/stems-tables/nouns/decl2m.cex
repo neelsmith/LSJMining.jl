@@ -3256,8 +3256,6 @@ nounstems.n72200|lsjx.n72200|οἱβ|masculine|os_ou|stemaccented
 nounstems.n72299|lsjx.n72299|οἰκισκ|masculine|os_ou|stemaccented
 nounstems.n72300|lsjx.n72300|οἰκισμ|masculine|os_ou|inflectionaccented
 nounstems.n72332|lsjx.n72332|οἰκοδομ|masculine|os_ou|recessive
-nounstems.n72351|lsjx.n72351|οἰκονομ|masculine|os_ou|recessive
-nounstems.n72357|lsjx.n72357|οἱκ|masculine|os_ou|stemaccented
 nounstems.n72371|lsjx.n72371|οἰκοτυρανν|masculine|os_ou|recessive
 nounstems.n72385|lsjx.n72385|οἰκοφθορ|masculine|os_ou|recessive
 nounstems.n72394|lsjx.n72394|οἰκτιρμ|masculine|os_ou|inflectionaccented
@@ -3836,7 +3834,6 @@ nounstems.n84396|lsjx.n84396|ποκ|masculine|os_ou|stemaccented
 nounstems.n84398|lsjx.n84398|ποκτ|masculine|os_ou|stemaccented
 nounstems.n84399|lsjx.n84399|ποκυφ|masculine|os_ou|stemaccented
 nounstems.n84409|lsjx.n84409|πολεμαρχ|masculine|os_ou|recessive
-nounstems.n84434|lsjx.n84434|πολεμ|masculine|os_ou|recessive
 nounstems.n84452|lsjx.n84452|πολιανομ|masculine|os_ou|stemaccented
 nounstems.n84457|lsjx.n84457|πολιαρχ|masculine|os_ou|stemaccented
 nounstems.n84497|lsjx.n84497|πολισμ|masculine|os_ou|inflectionaccented
@@ -4231,7 +4228,6 @@ nounstems.n94405|lsjx.n94405|σιτομετρ|masculine|os_ou|recessive
 nounstems.n94406|lsjx.n94406|σιτομετροσακκοφορ|masculine|os_ou|stemaccented
 nounstems.n94420|lsjx.n94420|σιτοπομπ|masculine|os_ou|inflectionaccented
 nounstems.n94423|lsjx.n94423|σιτοπον|masculine|os_ou|recessive
-nounstems.n94426|lsjx.n94426|σιτ|masculine|os_ou|stemaccented
 nounstems.n94427|lsjx.n94427|σιτοσπελλ|masculine|os_ou|recessive
 nounstems.n94441|lsjx.n94441|σιττακ|masculine|os_ou|inflectionaccented
 nounstems.n94444|lsjx.n94444|σιττυβ|masculine|os_ou|recessive
@@ -5163,7 +5159,6 @@ nounstems.n112319|lsjx.n112319|φρικασμ|masculine|os_ou|inflectionaccented
 nounstems.n112335|lsjx.n112335|φριμαγμ|masculine|os_ou|inflectionaccented
 nounstems.n112354|lsjx.n112354|φρονηματισμ|masculine|os_ou|inflectionaccented
 nounstems.n112378|lsjx.n112378|φρουν|masculine|os_ou|stemaccented
-nounstems.n112383|lsjx.n112383|φρουραρχ|masculine|os_ou|recessive
 nounstems.n112395|lsjx.n112395|φρουρ|masculine|os_ou|inflectionaccented
 nounstems.n112399|lsjx.n112399|φρυαγμ|masculine|os_ou|inflectionaccented
 nounstems.n112407|lsjx.n112407|φρυγανισμ|masculine|os_ou|inflectionaccented
