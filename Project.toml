@@ -1,7 +1,7 @@
 name = "LSJMining"
 uuid = "43354e92-6fc2-4cf2-af8b-a72a4ebba07f"
 authors = ["Neel Smith <dnsmith.neel@gmail.com>"]
-version = "0.10.2"
+version = "0.10.3"
 
 [deps]
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
