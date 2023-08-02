@@ -1,3 +1,14 @@
+"""Use reasonable default settings to invoke
+`kanones` function.
+$(SIGNATURES)    
+"""
+function kanones()
+    src = "cex"
+    target = joinpath(pwd(), "kanonesdata", "lsjx")
+    kroot = joinpath(dirname(pwd()), "Kanones.jl")
+    kanones(src, target, kroot)
+end
+
 """Read morphological data from CEX  in `src`,
 and write  tabular data files for Kanones to `target`.
 Records will be filtered by Kanones' collection of

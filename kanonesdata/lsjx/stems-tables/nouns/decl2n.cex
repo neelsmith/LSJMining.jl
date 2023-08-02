@@ -60,7 +60,6 @@ nounstems.n1793|lsjx.n1793|ἀετωνυχ|neuter|os_ou|recessive
 nounstems.n1857|lsjx.n1857|ἀηδονι|neuter|os_ou|stemaccented
 nounstems.n1953|lsjx.n1953|ἀθερολογι|neuter|os_ou|stemaccented
 nounstems.n2003|lsjx.n2003|ἀθηρωματι|neuter|os_ou|stemaccented
-nounstems.n2031|lsjx.n2031|ἀθλ|neuter|os_ou|stemaccented
 nounstems.n2075|lsjx.n2075|ἀθυρματι|neuter|os_ou|stemaccented
 nounstems.n2121|lsjx.n2121|αἰγαρι|neuter|os_ou|stemaccented
 nounstems.n2124|lsjx.n2124|Αἰγει|neuter|os_ou|inflectionaccented
@@ -1001,7 +1000,6 @@ nounstems.n28931|lsjx.n28931|δυσεντερι|neuter|os_ou|stemaccented
 nounstems.n29703|lsjx.n29703|δωδεκαγων|neuter|os_ou|recessive
 nounstems.n29734|lsjx.n29734|δωδεκαπλευρ|neuter|os_ou|recessive
 nounstems.n29750|lsjx.n29750|δωδεκατημορι|neuter|os_ou|stemaccented
-nounstems.n29774|lsjx.n29774|δωματι|neuter|os_ou|stemaccented
 nounstems.n29785|lsjx.n29785|δωρακιν|neuter|os_ou|recessive
 nounstems.n29821|lsjx.n29821|δωροδοχει|neuter|os_ou|inflectionaccented
 nounstems.n29828|lsjx.n29828|δωρ|neuter|os_ou|stemaccented
@@ -1697,7 +1695,6 @@ nounstems.n48708|lsjx.n48708|Θηραϊκ|neuter|os_ou|inflectionaccented
 nounstems.n48719|lsjx.n48719|θηρατρ|neuter|os_ou|recessive
 nounstems.n48721|lsjx.n48721|θηραφι|neuter|os_ou|stemaccented
 nounstems.n48744|lsjx.n48744|θηριδι|neuter|os_ou|stemaccented
-nounstems.n48760|lsjx.n48760|θηρι|neuter|os_ou|inflectionaccented
 nounstems.n48765|lsjx.n48765|θηριοτροφει|neuter|os_ou|inflectionaccented
 nounstems.n48826|lsjx.n48826|θησαυροφυλακικ|neuter|os_ou|inflectionaccented
 nounstems.n48827|lsjx.n48827|θησαυροφυλακι|neuter|os_ou|stemaccented
@@ -2654,7 +2651,6 @@ nounstems.n63702|lsjx.n63702|λογει|neuter|os_ou|inflectionaccented
 nounstems.n63706|lsjx.n63706|λογευτηρι|neuter|os_ou|stemaccented
 nounstems.n63708|lsjx.n63708|λογευτικ|neuter|os_ou|inflectionaccented
 nounstems.n63712|lsjx.n63712|λογιδι|neuter|os_ou|stemaccented
-nounstems.n63718|lsjx.n63718|λογι|neuter|os_ou|stemaccented
 nounstems.n63728|lsjx.n63728|λογιστηρι|neuter|os_ou|stemaccented
 nounstems.n63742|lsjx.n63742|λογοδειπν|neuter|os_ou|recessive
 nounstems.n63762|lsjx.n63762|λογομυθι|neuter|os_ou|stemaccented
@@ -2743,7 +2739,6 @@ nounstems.n64886|lsjx.n64886|μαμμιδι|neuter|os_ou|stemaccented
 nounstems.n64925|lsjx.n64925|μανι|neuter|os_ou|inflectionaccented
 nounstems.n64931|lsjx.n64931|μανναρι|neuter|os_ou|stemaccented
 nounstems.n64932|lsjx.n64932|μαννιν|neuter|os_ou|recessive
-nounstems.n64945|lsjx.n64945|μαντει|neuter|os_ou|inflectionaccented
 nounstems.n64975|lsjx.n64975|μαππι|neuter|os_ou|inflectionaccented
 nounstems.n64983|lsjx.n64983|μαραθ|neuter|os_ou|recessive
 nounstems.n64984|lsjx.n64984|μαραθρ|neuter|os_ou|recessive
@@ -4373,7 +4368,6 @@ nounstems.n95846|lsjx.n95846|σπεκουλι|neuter|os_ou|stemaccented
 nounstems.n95860|lsjx.n95860|σπερματι|neuter|os_ou|stemaccented
 nounstems.n95872|lsjx.n95872|σπερμει|neuter|os_ou|inflectionaccented
 nounstems.n95906|lsjx.n95906|σπηλαδι|neuter|os_ou|stemaccented
-nounstems.n95908|lsjx.n95908|σπηλαι|neuter|os_ou|stemaccented
 nounstems.n95948|lsjx.n95948|σπινθι|neuter|os_ou|inflectionaccented
 nounstems.n95950|lsjx.n95950|σπινιδ|neuter|os_ou|stemaccented
 nounstems.n95956|lsjx.n95956|σπλαγχνιδι|neuter|os_ou|stemaccented
