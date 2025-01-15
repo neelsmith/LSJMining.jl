@@ -1,5 +1,4 @@
 module LSJMining
-using LexiconMining
 using PolytonicGreek, Orthography
 using Unicode
 
@@ -8,6 +7,9 @@ const PG = PolytonicGreek
 
 
 using Documenter, DocStringExtensions
+
+include("suarez.jl")
+#=
 include("utils.jl")
 include("phonology.jl")
 
@@ -42,6 +44,6 @@ export vowelverb, liquidverb, stopverb, contractverb, izwverb, sigmaverb, numive
 export stripbreathing
 export splitmorphemes
 export profile_endings
-
+=#
 end # module
 

@@ -2,3 +2,4 @@ Manifest.toml
 .vscode/
 docs-src/build/
 kanonesdata/test/
+.DS_Store
